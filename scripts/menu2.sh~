@@ -1,0 +1,88 @@
+#!/bin/bash
+
+# Config
+shwmenu=0
+shwmenucls=1
+startcls=1
+onekeyc=1
+
+# Menu Operations
+xfx_hello_world() {
+    echo "Hello World!"
+}
+
+xfx_show_time() {
+    date "+%a %d %b %Y %H:%M:%S %Z (UTC%:z)"
+}
+
+xfx_ring_bell() {
+    local TIMES="$1"
+    if [ "$TIMES" == "" ]; then TIMES=1; fi
+    if [ "$TIMES" -le 0 ]; then TIMES=0;
+    else
+        for ((i=1; i <= $TIMES; i++)); do
+            printf '\7'; sleep 0.2;
+        done
+    fi
+}
+
+# App Functions
+greetings() {
+    echo -n "Hello $(whoami), this is $(hostname)."
+}
+
+waitkey() {
+    read -rs -n 1 -p "Press any key to continue..." wkey
+}
+
+# Display Menu (Function)
+show_menu() {
+    if [ $shwmenucls -eq 1 ]; then clear ; fi
+    greetings
+    xfx_show_time
+    echo
+    echo "MENU"
+    echo
+    echo "1. Hello World!"
+    echo "2. Show Date and Time"
+    echo "G. Ring the Bell"
+    echo "M. Show This Menu"
+    echo "Q. Quit"
+}
+
+# Call requested operation
+choose_option() {
+    local choice
+    echo -n "Enter choice "
+    if [ $shwmenu -eq 0 ]; then echo -n "[M for Menu] "; fi
+    echo -n ": "
+    if [ $onekeyc -eq 1 ]; then
+        choice=$(gum choose --header "Enter choice" --height "25")
+    else
+        read -r -p "" choice
+    fi
+    local wkeyi=1
+    case $choice in
+        "1") xfx_hello_world ;;
+        "2") xfx_show_time ;;
+        "c"|"C") clear ;;
+        "g"|"G") xfx_ring_bell "1" ;;
+        "m"|"M"|"h"|"H") show_menu; wkeyi=0 ;;
+        "q"|"Q"|"x"|"X") exit 0 ;;
+        *) echo "Invalid option."
+    esac
+    if [ $shwmenu -eq 1 ] && [ $shwmenucls -eq 1 ] && [ $wkeyi -eq 1 ]; then
+        waitkey
+    fi
+}
+
+# Main
+if [ $startcls -eq 1 ]; then clear ; fi
+if [ $shwmenu -eq 0 ]; then show_menu ; fi
+while true
+do
+    echo
+    if [ $shwmenu -eq 1 ]; then show_menu ; fi
+    choose_option
+done
+
