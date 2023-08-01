@@ -1,0 +1,4 @@
+function create-file() {
+  touch "$1.${2:-txt}"
+}
+

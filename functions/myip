@@ -1,0 +1,20 @@
+function myip() {
+  # Get IP address information from ipinfo.io API
+  local ip_info=$(curl -s https://ipinfo.io/json)
+
+  # Parse JSON response to get IP address, city, region, country, and coordinates
+  local ip=$(echo $ip_info | jq -r '.ip')
+  local city=$(echo $ip_info | jq -r '.city')
+  local region=$(echo $ip_info | jq -r '.region')
+  local country=$(echo $ip_info | jq -r '.country')
+  local lat=$(echo $ip_info | jq -r '.loc' | cut -d ',' -f 1)
+  local lon=$(echo $ip_info | jq -r '.loc' | cut -d ',' -f 2)
+
+  # Print IP address information
+  echo "IP Address: $ip"
+  echo "City: $city"
+  echo "Region: $region"
+  echo "Country: $country"
+  echo "Latitude: $lat"
+  echo "Longitude: $lon"
+}

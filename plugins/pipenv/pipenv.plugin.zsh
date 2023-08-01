@@ -1,0 +1,1 @@
+/home/rival/.config/zsh/plugins/pipenv/pipenv.zsh

@@ -1,0 +1,1407 @@
+: 1690459512:0;sourcezsh && enable-fzf-tab
+: 1689433212:0;cd .config/zsh/tmp
+: 1686553489:0;zplug udate
+: 1686553513:0;zplug install zsh-lsd
+: 1686557436:0;ls -laFh
+: 1686557580:0;cd asdf
+: 1686557764:0;\t
+: 1686558118:0;apt search gstreamer
+: 1686558184:0;ag --help
+: 1686558650:0;bind -p | grep "\\C-i"
+: 1686558680:0;bind -n C-i
+: 1686563512:0;lsd --tree
+: 1686563534:0;lsd -x
+: 1686563552:0;lsd -sd
+: 1686563601:0;cat --help
+: 1686563662:0;gem install colorls
+: 1686563691:0;cd Au
+: 1686563880:0;bind TAB:menu-complete
+: 1686568269:0;mkvenv]
+: 1686568468:0;run.sh
+: 1686569505:0;cd v0.4.0
+: 1686569518:0;agi docker.io
+: 1686569573:0;docker pull significantgravitas/auto-gpt
+: 1686570559:0;agi chromium-l10n chromium-shell cpp-doc gcc-10-locales fonts-stix | otf-stix\
+  fonts-lmodern libcanberra0 pulseaudio i965-va-driver-shaders\
+  libasound2-plugins alsa-utils libdigest-hmac-perl libgssapi-perl colord\
+  cups-common gpm gstreamer1.0-tools gvfs libusbmuxd-tools liblcms2-utils\
+  libcrypt-ssleay-perl opus-tools pciutils librsvg2-bin\
+  libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal\
+  libsasl2-modules-ldap libsasl2-modules-otp libsasl2-modules-sql lm-sensors\
+  speex libauthen-ntlm-perl libunicode-map8-perl libunicode-string-perl\
+  xml-twig-tools opencl-icd appstream perl-doc libterm-readline-gnu-perl\
+  | libterm-readline-perl-perl make libtap-harness-archive-perl python3-doc\
+  python3-tk python3-venv python-dbus-doc python3-dbus-dbg python3-setuptools\
+  python3-cryptography python3-openssl python3-socks python-requests-doc\
+  python3.9-venv python3.9-doc binutils binfmt-support gnome-software\
+  systemd-containermesa-utils nickle cairo-5c xorg-docs-core
+: 1686570620:0;chromium-l10n chromium-shell cpp-doc gcc-10-locales fonts-stix otf-stix\
+fonts-lmodern libcanberra0 pulseaudio i965-va-driver-shaders\
+libasound2-plugins alsa-utils libdigest-hmac-perl libgssapi-perl colord\
+cups-common gpm gstreamer1.0-tools gvfs libusbmuxd-tools liblcms2-utils\
+libcrypt-ssleay-perl opus-tools pciutils librsvg2-bin\
+libsasl2-modules-gssapi-mit libsasl2-modules-gssapi-heimdal\
+libsasl2-modules-ldap libsasl2-modules-otp libsasl2-modules-sql lm-sensors\
+speex libauthen-ntlm-perl libunicode-map8-perl libunicode-string-perl\
+xml-twig-tools opencl-icd appstream perl-doc libterm-readline-gnu-perl\
+libterm-readline-perl-perl make libtap-harness-archive-perl python3-doc\
+python3-tk python3-venv python-dbus-doc python3-dbus-dbg python3-setuptools\
+python3-cryptography python3-openssl python3-socks python-requests-doc\
+python3.9-venv python3.9-doc binutils binfmt-support gnome-software\
+systemd-container mesa-utils nickle cairo-5c xorg-docs-core
+: 1686570641:0;agi chromium-l10n chromium-shell cpp-doc gcc-10-locales fonts-stix otf-stix\
+fonts-lmodern libcanberra0 pulseaudio i965-va-driver-shaders\
+libasound2-plugins alsa-utils libdigest-hmac-perl libgssapi-perl colord\
+cups-common gpm gstreamer1.0-tools gvfs libusbmuxd-tools liblcms2-utils\
+libcrypt-ssleay-perl opus-tools pciutils librsvg2-bin\
+libsasl2-modules-gssapi-mit libsasl2-modules-gssapi-heimdal\
+libsasl2-modules-ldap libsasl2-modules-otp libsasl2-modules-sql lm-sensors\
+speex libauthen-ntlm-perl libunicode-map8-perl libunicode-string-perl\
+xml-twig-tools opencl-icd appstream perl-doc libterm-readline-gnu-perl\
+libterm-readline-perl-perl make libtap-harness-archive-perl python3-doc\
+python3-tk python3-venv python-dbus-doc python3-dbus-dbg python3-setuptools\
+python3-cryptography python3-openssl python3-socks python-requests-doc\
+python3.9-venv python3.9-doc binutils binfmt-support gnome-software\
+systemd-container mesa-utils nickle cairo-5c xorg-docs-core
+: 1686570688:0;agi mesa-utils
+: 1686572114:0;print -z $(fc -lrn 1 | awk '!a[$0]++' | fzf --tac --no-sort +m)
+: 1686576023:0;docker-compose run --rm auto-gpt
+: 1686576034:0;lsd -a
+: 1686576051:0;sudo docker-compose run --rm auto-gpt
+: 1686576168:0;autogt
+: 1686576269:0;docker-compose build auto-gpt
+: 1686577538:0;agpt
+: 1686577552:0;pipi agpt
+: 1686577559:0;pip agpt
+: 1686578503:0;python3 test.py
+: 1686578538:0;pip3 install coverage
+: 1686578549:0;sudo pip3 install coverage
+: 1686578573:0;sudo tests.py
+: 1686578583:0;sudo python3 tests.py
+: 1686578598:0;python3 tests.py
+: 1686580092:0;agi apt-utils
+: 1686581923:0;zkbd
+: 1686582262:0;echoti smkx
+: 1686583343:0;sudo showkey -a
+: 1686596266:0;zoneminder
+: 1686596287:0;zonedb
+: 1686596294:0;agi zoneminder
+: 1686596432:0;mysql -uroot -p < /usr/share/zoneminder/db/zm_create.sql
+: 1686596543:0;sudo cp /etc/apache2/conf-available/zoneminder.conf /etc/apache2/conf-available/zoneminder.conf.sav
+: 1686598944:0;cd Documents
+: 1686598960:0;chmod +x updated.sh
+: 1686598966:0;./updated.sh
+: 1686599069:0;clone https://github.com/leebaird/discover
+: 1686599084:0;gfc https://github.com/leebaird/discover
+: 1686599106:0;./update.sh
+: 1686600612:0;sudo ./active.sh
+: 1686600687:0;./active.sh
+: 1686600762:0;sudo ./generateTargets.sh
+: 1686600793:0;cd config
+: 1686601120:0;sudo ./discover
+: 1686601126:0;sudo ./discover.sh
+: 1686693219:0;1d
+: 1686693251:0;1up
+: 1686693677:0;neofetch
+: 1686693829:0;agu && agug
+: 1686693924:0;sudo apt-get install build-essential git
+: 1686693932:0;git clone https://github.com/aircrack-ng/rtl8812au.git
+: 1686693963:0;cd rtl8812au
+: 1686693983:0;sudo make dkms_install
+: 1686694217:0;sudo modprobe 8812au
+: 1686694522:0;modprobe --all
+: 1686694530:0;sudo modprobe --help
+: 1686694564:0;modprobe -n
+: 1686694604:0;sudo modprobe install
+: 1686698603:0;apt search gstreamer plugin
+: 1686698856:0;agi appsink
+: 1686698862:0;apt search appsink
+: 1686698874:0;agi gir1.2-gst-rtsp-server-1.0 gst-omx-listcomponents gstreamer1.0-adapter-pulseeffects gstreamer1.0-crystalizer-pulseeffects gstreamer1.0-plugins-bad-apps gstreamer1.0-plugins-base-apps gstreamer1.0-plugins-rtp gstreamer1.0-pocketsphinx gstreamer1.0-qt6 gstreamer1.0-qt5 gstreamer1.0-rtsp gstreamer1.0-tools libgstrtspserver-1.0-0
+: 1686699238:0;sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+: 1686699332:0;sudo apt install libgstreamer-plugins-base1.0-dev
+: 1686701292:0;python3 attack.py
+: 1686703356:0;clone https://github.com/Z4nzu/hackingtool.git
+: 1686703360:0;git clone https://github.com/Z4nzu/hackingtool.git
+: 1686703381:0;clone https://github.com/Z4nzu/hackingtool.git~]
+: 1686703397:0;cd hackingtool
+: 1686703405:0;docker-compose build
+: 1686703541:0;cd Wicked
+: 1686703551:0;sudo python3 attack.py
+: 1686703565:0;sudo python attack.py
+: 1686703625:0;docker-compose run hackingtool
+: 1686704061:0;hackingtool
+: 1686704440:0;2d
+: 1686705034:0;sudo docker run -it vgpastor/hackingtool
+: 1686706620:0;docker run -it vgpastor/hackingtool
+: 1686711623:0;date --help
+: 1686711723:0;date +%a
+: 1686711734:0;date %a
+: 1686711779:0;date -d "%a %b %d, %Y - %r %Z"
+: 1686711789:0;date -d %a %b %d, %Y
+: 1686711795:0;date -d %a %b %d
+: 1686711801:0;date -d %a
+: 1686711809:0;date
+: 1686711909:0;netstat -antp
+: 1686711923:0;bh
+: 1686712213:0;./cobaltstrike
+: 1686712228:0;sudo ./cobaltstrike
+: 1686712318:0;./teamserver
+: 1686712324:0;teamserver
+: 1686712358:0;teamserver --help
+: 1686712404:0;sudo apt update\
+sudo apt install default-jdk
+: 1686713437:0;clone https://github.com/yoheinakajima/babyagi.git
+: 1686713441:0;git clone https://github.com/yoheinakajima/babyagi.git
+: 1686713453:0;cd babyagi
+: 1686714552:0;cp .env.example .env
+: 1686715294:0;python babyagi.py
+: 1686715645:0;gfc https://github.com/eumemic/ai-legion
+: 1686715651:0;cd ai-legion
+: 1686715661:0;npm install
+: 1686715806:0;npm run start 6 gpt-3.5-turbo
+: 1686719254:0;cd scripts/
+: 1686719266:0;cd AI Generated
+: 1686719324:0;sudo python recon.py
+: 1686719331:0;sudo netscan.py
+: 1686719340:0;sudo python3 netscan.py
+: 1686720346:0;pip install tqdm
+: 1686720408:0;sudo python3 portscan.py
+: 1686720447:0;sudo python3 portscan.py -h
+: 1686720464:0;sudo python3 portscan.py -t 192.168.0.1
+: 1686720767:0;sudo python webscan.py
+: 1686720857:0;sudo python3 webscan.py nolimitdronez.com
+: 1686720879:0;sudo python3 webscan.py
+: 1686721040:0;pip install --upgrade requests
+: 1686721096:0;sudo python3 webscan.py google.com
+: 1686721556:0;sudo python3 weblogin.py
+: 1686721605:0;sudo python3 file-mmf.py
+: 1686721623:0;sudo python3 file-pjf.py
+: 1686721635:0;pip install smtplib
+: 1686721650:0;sudo python3 recon.py
+: 1686722022:0;sudo /recon.sh
+: 1686722041:0;chmod +x recon.sh
+: 1686722117:0;sudo ./recon.sh
+: 1686722133:0;sudo ./recon.sh http://nolimitdronez.com
+: 1686722979:0;sudo airmon-ng stop wlan1mon
+: 1686731382:0;cd airbash
+: 1686731487:0;chmod +x update.sh
+: 1686731527:0;sudo ./update.sh
+: 1686731556:0;sudo ./aiba.sh
+: 1686731563:0;sudo ./airba.sh
+: 1686731779:0;0up
+: 1686732033:0;sudo hcxdumptool -o fire.pcapng -i wlan2 --enable_status=15 --filterlist_ap=~/Documents/filter.txt --filter_mode=2
+: 1686732055:0;sudo hcxdumptool -i wlan1 --enable_status=15
+: 1686732113:0;sudo hcxdumptool -i wlan1 -o summerdays.pcapng --enable_status=15
+: 1686732516:0;xterm -hold -e "hcxdumptool -i wlan1mon --enable_status=1 -o Capture
+: 1686732528:0;sudo xterm -hold -e hcxdumptool -i wlan1mon --enable_status=1 -o Capture
+: 1686733578:0;sudo airodump-ng -c --bssid -w handshake wlan1mon
+: 1686806980:0;cd Airwalker
+: 1686806994:0;chmod +x AH2refact.sh
+: 1686807001:0;sudo ./AH2refact.sh
+: 1686815930:0;sudo wavemon --help
+: 1686815942:0;sudo wavemon -h
+: 1686815947:0;wavemon -h
+: 1686815955:0;sudo wavemon
+: 1686816003:0;sudo wash -i wlan1
+: 1686816062:0;sudo wash -i wlan0
+: 1686816165:0;sudo iwlist wlan1 scan
+: 1686816175:0;sudo iwlist wlan0 scan
+: 1686822592:0;chmod +x airspin.sh
+: 1686822602:0;sudo ./airspin.sh
+: 1686824032:0;chmod +x uhh.sh
+: 1686824040:0;sudo ./uhh.sh
+: 1686825941:0;sudo ./uhh.sh -h
+: 1686825952:0;sudo ./uhh.sh --help
+: 1686826277:0;sudo ./uhh.sh -i wlan1 -a pmkid
+: 1686826459:0;sudo ./Airhunter.sh
+: 1686831921:0;git clone https://github.com/opsdisk/pagodo.git
+: 1686831947:0;virtualenv -p python3.7 .venv
+: 1686832015:0;python ghdb_scraper.py
+: 1686832033:0;python pagodo.py
+: 1686832054:0;python pagodo.py -h
+: 1686832122:0;python pagodo.py -d github.com -g dorks.txt
+: 1686832180:0;python pagodo.py -d github.com -g /home/rival/Git/pagodo/dorks/vulnerable_files.dorks
+: 1686832379:0;git clone https://github.com/Fricciolosa-Red-Team/evildork.git
+: 1686832383:0;cd evildork
+: 1686832394:0;python3 evildork.py
+: 1686832407:0;python3 evildork.py -t Korey Starr
+: 1686832421:0;python3 evildork.py -t "Korey Starr"
+: 1686832535:0;git clone https://github.com/kuburan/txtool.git
+: 1686832544:0;cd txtool
+: 1686832650:0;virtualenv -p python2.9 .venv
+: 1686832659:0;virtualenv -p python2.9.18 .venv
+: 1686832674:0;virtualenv --help
+: 1686832817:0;poetry-shell --help
+: 1686832821:0;poetry
+: 1686832829:0;poetry --help
+: 1686832882:0;poetry new
+: 1686832895:0;poetry new /home/rival/Git/txtool
+: 1686832902:0;poetry new /home/rival/Git/txtools
+: 1686833030:0;pip -r install requirements.txt
+: 1686833044:0;pip install -r requirements.txt
+: 1686833060:0;pip install -r requirement.txt
+: 1686833084:0;las
+: 1686833107:0;python2 install.py
+: 1686836567:0;docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --repo https://github.com/trufflesecurity/test_keys
+: 1686836621:0;sudo docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --repo https://github.com/trufflesecurity/test_keys
+: 1686837849:0;git clone https://github.com/ading2210/openai-key-scraper
+: 1686837857:0;cd openai-key-scraper
+: 1686838150:0;python3 main.py "__cf_bm=xgsM2tjntYGbFA6ZlXfZTRayjABkoraybGqsF51Ab2I-1686837785-0-AQbjDQRJnhS3QFeSUwdKOdTlPUbbHeaw5scKx1GX6EcKpz1QgMRaJxqkddGDsCDme0almTEwV9nHQWi4u67R1Ck=; _cfuvid=SCw3._SE.n6HZGFkROQMtm5l9yDeXhFdXhxCkI6F9no-1686837785498-0-604800000; amplitudeSessionId=1686837885; _dd_s=logs=1&id=d1b12c2d-9dbc-402e-b39a-e754368402a8&created=1686837885790&expire=1686838881251&rum=0; gating_id=2aad27ea-34cb-4ffe-b6f1-14f9218442de; gfa_ref=(not%20provided); gfa_landed_on=/; ajs_anonymous_id=3bb929c8-7a2d-4a67-b646-bc73e5a4686b; connect.sid=s%3A18rMX5_Bv1xPCIzWOXLFwV-j-b_CCvEW.%2FOwdWBI4fMfcKOPIy3NJaz6b8neQgYoS222ZHtykCQo; replit_authed=1; ld_uid=23969783; ajs_user_id=23969783; __stripe_mid=b1625172-d323-42c4-ae18-c1358abde8d764d277; __stripe_sid=a1c3aec6-3c23-4f34-a3a9-f895dd16a609023848" "sk- chatgpt"
+: 1686838183:0;python3 main.py "__cf_bm=xgsM2tjntYGbFA6ZlXfZTRayjABkoraybGqsF51Ab2I-1686837785-0-AQbjDQRJnhS3QFeSUwdKOdTlPUbbHeaw5scKx1GX6EcKpz1QgMRaJxqkddGDsCDme0almTEwV9nHQWi4u67R1Ck=; _cfuvid=SCw3._SE.n6HZGFkROQMtm5l9yDeXhFdXhxCkI6F9no-1686837785498-0-604800000; amplitudeSessionId=1686837885; _dd_s=logs=1&id=d1b12c2d-9dbc-402e-b39a-e754368402a8&created=1686837885790&expire=1686838881251&rum=0; gating_id=2aad27ea-34cb-4ffe-b6f1-14f9218442de; gfa_ref=(not%20provided); gfa_landed_on=/; ajs_anonymous_id=3bb929c8-7a2d-4a67-b646-bc73e5a4686b; connect.sid=s%3A18rMX5_Bv1xPCIzWOXLFwV-j-b_CCvEW.%2FOwdWBI4fMfcKOPIy3NJaz6b8neQgYoS222ZHtykCQo; replit_authed=1; ld_uid=23969783; ajs_user_id=23969783; __stripe_mid=b1625172-d323-42c4-ae18-c1358abde8d764d277; __stripe_sid=a1c3aec6-3c23-4f34-a3a9-f895dd16a609023848" "sk-"
+: 1686838199:0;python3 main.py "__cf_bm=xgsM2tjntYGbFA6ZlXfZTRayjABkoraybGqsF51Ab2I-1686837785-0-AQbjDQRJnhS3QFeSUwdKOdTlPUbbHeaw5scKx1GX6EcKpz1QgMRaJxqkddGDsCDme0almTEwV9nHQWi4u67R1Ck=; _cfuvid=SCw3._SE.n6HZGFkROQMtm5l9yDeXhFdXhxCkI6F9no-1686837785498-0-604800000; amplitudeSessionId=1686837885; _dd_s=logs=1&id=d1b12c2d-9dbc-402e-b39a-e754368402a8&created=1686837885790&expire=1686838881251&rum=0; gating_id=2aad27ea-34cb-4ffe-b6f1-14f9218442de; gfa_ref=(not%20provided); gfa_landed_on=/; ajs_anonymous_id=3bb929c8-7a2d-4a67-b646-bc73e5a4686b; connect.sid=s%3A18rMX5_Bv1xPCIzWOXLFwV-j-b_CCvEW.%2FOwdWBI4fMfcKOPIy3NJaz6b8neQgYoS222ZHtykCQo; replit_authed=1; ld_uid=23969783; ajs_user_id=23969783; __stripe_mid=b1625172-d323-42c4-ae18-c1358abde8d764d277; __stripe_sid=a1c3aec6-3c23-4f34-a3a9-f895dd16a609023848" "openai"
+: 1686838310:0;docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --repo https:https://github.com/DeOkanee/TANYADEBOT
+: 1686838461:0;python3 main.py "__cf_bm=xgsM2tjntYGbFA6ZlXfZTRayjABkoraybGqsF51Ab2I-1686837785-0-AQbjDQRJnhS3QFeSUwdKOdTlPUbbHeaw5scKx1GX6EcKpz1QgMRaJxqkddGDsCDme0almTEwV9nHQWi4u67R1Ck=; _cfuvid=SCw3._SE.n6HZGFkROQMtm5l9yDeXhFdXhxCkI6F9no-1686837785498-0-604800000; amplitudeSessionId=1686837885; _dd_s=logs=1&id=d1b12c2d-9dbc-402e-b39a-e754368402a8&created=1686837885790&expire=1686838881251&rum=0; gating_id=2aad27ea-34cb-4ffe-b6f1-14f9218442de; gfa_ref=(not%20provided); gfa_landed_on=/; ajs_anonymous_id=3bb929c8-7a2d-4a67-b646-bc73e5a4686b; connect.sid=s%3A18rMX5_Bv1xPCIzWOXLFwV-j-b_CCvEW.%2FOwdWBI4fMfcKOPIy3NJaz6b8neQgYoS222ZHtykCQo; replit_authed=1; ld_uid=23969783; ajs_user_id=23969783; __stripe_mid=b1625172-d323-42c4-ae18-c1358abde8d764d277; __stripe_sid=a1c3aec6-3c23-4f34-a3a9-f895dd16a609023848" "OPENAI_API_KEY"
+: 1686838483:0;python3 main.py "__cf_bm=xgsM2tjntYGbFA6ZlXfZTRayjABkoraybGqsF51Ab2I-1686837785-0-AQbjDQRJnhS3QFeSUwdKOdTlPUbbHeaw5scKx1GX6EcKpz1QgMRaJxqkddGDsCDme0almTEwV9nHQWi4u67R1Ck=; _cfuvid=SCw3._SE.n6HZGFkROQMtm5l9yDeXhFdXhxCkI6F9no-1686837785498-0-604800000; amplitudeSessionId=1686837885; _dd_s=logs=1&id=d1b12c2d-9dbc-402e-b39a-e754368402a8&created=1686837885790&expire=1686838881251&rum=0; gating_id=2aad27ea-34cb-4ffe-b6f1-14f9218442de; gfa_ref=(not%20provided); gfa_landed_on=/; ajs_anonymous_id=3bb929c8-7a2d-4a67-b646-bc73e5a4686b; connect.sid=s%3A18rMX5_Bv1xPCIzWOXLFwV-j-b_CCvEW.%2FOwdWBI4fMfcKOPIy3NJaz6b8neQgYoS222ZHtykCQo; replit_authed=1; ld_uid=23969783; ajs_user_id=23969783; __stripe_mid=b1625172-d323-42c4-ae18-c1358abde8d764d277; __stripe_sid=a1c3aec6-3c23-4f34-a3a9-f895dd16a609023848" "OPENAI_"
+: 1686838664:0;sudo docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --repo https://github.com/fibjs/fibjs/tree/dev/tools
+: 1686838730:0;sudo docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --repo https://github.com/ConnectAI-E/Feishu-OpenAI/tree/master/code
+: 1686838770:0;sudo docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --repo https://github.com/microsoft/AirSim
+: 1686838917:0;sudo trufflehog
+: 1686838989:0;trufflehog github --org=trufflesecurity --only-verified
+: 1686839240:0;sudo docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --repo https://github.com/jinjun1994/ChatGPT-API-DESKTOP
+: 1686839284:0;sudo docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --repo https://github.com/betalgo/openai
+: 1686839315:0;sudo docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --repo https://github.com/openai-translator/openai-translator
+: 1686839394:0;sudo docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --repo https://github.com/Danny-Nunez/OpenAI-Matrix
+: 1686839511:0;clear
+: 1686839597:0;sudo docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --repo https://github.com/marakas73/telegram_bot_with_openai
+: 1686839772:0;sudo docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --repo https://github.com/yqchilde/wxbot
+: 1686839828:0;trufflehog https://github.com/yqchilde/wxbot
+: 1686839859:0;trufflehog https://github.com/Significant-Gravitas/Auto-GPT
+: 1686839920:0;trufflehog https://github.com/ai919/Awesome-ChatGPT
+: 1686840009:0;trufflehog https://github.com/nomic-ai/gpt4all
+: 1686840143:0;trufflehog https://github.com/vastsa/AILink
+: 1686840205:0;trufflehog https://github.com/MikuX-Dev/gpt4
+: 1686840378:0;trufflehog https://github.com/ghanilorenzini/GPT42
+: 1686840632:0;sudo trufflehog xhttps://github.com/search?q=GPT4&type=repositories&s=updated&o=desc&p=2
+: 1686840666:0;trufflehog https://github.com/R0hanNayan/GPT4
+: 1686840699:0;trufflehog https://github.com/MustafaAlfaisal/gpt4_website
+: 1686840739:0;trufflehog https://github.com/greybluesea/TrelloClone
+: 1686840769:0;trufflehog https://github.com/Feiir/minddial-uniapp
+: 1686840810:0;trufflehog https://github.com/xiangsx/gpt4free-ts
+: 1686840883:0;trufflehog https://github.com/PlexPt/chatgpt-java
+: 1686840995:0;trufflehog https://github.com/ramonvc/freegpt-webui
+: 1686841022:0;trufflehog https://github.com/noes14155/Telegrambot-with-GPT4free
+: 1686841069:0;trufflehog https://github.com/AlexisAndradeDev/CommandsGPT
+: 1686841131:0;trufflehog https://github.com/blo4nik/tgbot-gpt4
+: 1686841167:0;trufflehog https://github.com/microsoft/automated-explanations
+: 1686841258:0;./run.sh
+: 1686841383:0;trufflehog https://github.com/Verkoz/CHAT-GPT-PLUS-FREE
+: 1686841436:0;trufflehog https://github.com/TheLime1/aichat-cli
+: 1686841476:0;trufflehog https://github.com/dalehornidge/Jet_Set_Go
+: 1686841700:0;trufflehog https://github.com/francoabaroa/passistant
+: 1686877185:0;sudo nmapsi4
+: 1686877643:0;sudo netdiscover --help
+: 1686877651:0;netdiscover --help
+: 1686877683:0;netdiscover -i wlan1 -L
+: 1686877713:0;netdiscover -i wlan0 -L
+: 1686909358:0;sudo nmap 72.217.46.118
+: 1686909384:0;sudo nmap -Pn 72.217.46.118
+: 1686911594:0;sudo chatgpt --help
+: 1686912777:0;nmap_full_with_scripts -e ech0 shodan-api.apikey vbwt94BItoSdNoZkoX57mmEX0xCZeJAs -v 72.217.46.118
+: 1686912945:0;sudo vmap -e wlan1 shodan-api.apikey vbwt94BItoSdNoZkoX57mmEX0xCZeJAs -v 72.217.46.118
+: 1686912968:0;sudo vmap -e wlan1 -Pn shodan-api.apikey vbwt94BItoSdNoZkoX57mmEX0xCZeJAs -v 72.217.46.118
+: 1686912994:0;whois 72.217.46.118
+: 1686913018:0;shodan --help
+: 1686913103:0;ssh 72.217.46.118
+: 1686913480:0;sudo masscan --help
+: 1686913502:0;masscan --help
+: 1686913573:0;masscam -p1234 --echo
+: 1686913582:0;masscan -p1234 --echo
+: 1686913622:0;masscan --adapter-ip
+: 1686913681:0;sudo masscan -p 1-4000 72.217.46.118
+: 1687005140:0;snap --help
+: 1687005155:0;sudo snap services
+: 1687005178:0;sudo snap list
+: 1687005415:0;agi snapd
+: 1687005427:0;sudo apt-get update
+: 1687005631:0;snap install core
+: 1687005736:0;sudo systemctl enable snapd
+: 1687005746:0;sudo systemctl start snapd
+: 1687005752:0;sudo snap install core
+: 1687010194:0;sudo snap install multipass
+: 1687010248:0;snap warnings
+: 1687010267:0;systemctl enable --now snapd.apparmor
+: 1687010335:0;multipass --help
+: 1687010345:0;multipass launch
+: 1687011264:0;sudo chatgpt --run
+: 1687012487:0;wavemon
+: 1687012832:0;dns
+: 1687012840:0;ip a
+: 1687012846:0;mac
+: 1687012871:0;$(hostname -I | awk '{print $1}')
+: 1687013000:0;sudo dkms add -m rtl88x2bu -v git
+: 1687013024:0;git clone "https://github.com/RinCat/RTL88x2BU-Linux-Driver.git" /usr/src/rtl88x2bu-git
+: 1687013056:0;sudo git clone github.com/RinCat/RTL88x2BU-Linux-Driver.git /usr/src/rtl88x2bu-git
+: 1687013142:0;sudo ./dkms-install.sh
+: 1687013253:0;gfc https://github.com/morrownr/88x2bu-20210702
+: 1687013260:0;cd rtl8822bu
+: 1687013391:0;sudo dkms remove rtl88x2bu/5.8.7.4 --all
+: 1687013426:0;sudo dkms remove 8812au --all
+: 1687013459:0;sudo dkms remove -m 8812au
+: 1687013666:0;sudo make install
+: 1687013744:0;sudo apt-get install linux-headers-$(uname -r)
+: 1687013779:0;make
+: 1687087775:0;virtualbox
+: 1687089108:0;flatpak install flathub org.gnome.baobab
+: 1687089234:0;flatpak run org.gnome.baobab
+: 1687091385:0;cd akuma
+: 1687091397:0;cd Akuma
+: 1687091407:0;akuma
+: 1687091420:0;./kuma
+: 1687091465:0;sudo ./akuma
+: 1687091642:0;chatgpt
+: 1687091674:0;cloak
+: 1687091681:0;decloak
+: 1687091728:0;extip
+: 1687091733:0;ip
+: 1687091735:0;ipa
+: 1687092259:0;chmod +x akuma2
+: 1687092328:0;./akuma
+: 1687092337:0;./akuma2
+: 1687092855:0;cd pagodo
+: 1687092864:0;python3 pagodo.py
+: 1687092888:0;cd dorks
+: 1687092950:0;sudo python3 pagodo.py ~/Git/pagodo/dorks/sensitive_online_shopping_info.dorks
+: 1687092983:0;python3 pagodo.py ~/Git/pagodo/dorks/sensitive_online_shopping_info.dorks
+: 1687092997:0;python3 pagodo.py -g ~/Git/pagodo/dorks/sensitive_online_shopping_info.dorks
+: 1687096434:0;sudo bruteshark --help
+: 1687096437:0;bruteshark
+: 1687096442:0;apt search bruteshark
+: 1687096499:0;brutespray
+: 1687096536:0;brutespray --service ssh
+: 1687102771:0;cd /lib/python3/dist-packages/termineter/modules
+: 1687102783:0;sudo python3 brute_force_login.py
+: 1687102798:0;termineter
+: 1687103146:0;cd /opt/Teeth/units
+: 1687103169:0;sudo python3 OWABrute.py
+: 1687103198:0;sudo python3 NmapScan.py
+: 1687103311:0;cd /opt/Teeth/
+: 1687103326:0;teeth
+: 1687103329:0;Teeth
+: 1687103337:0;cd units
+: 1687103483:0;python quickSearch.py "Apache 2.2.1"
+: 1687103548:0;sudo python3 PIPAttack.py
+: 1687103556:0;sudo python3 PIPAttack.py "Linux"
+: 1687103564:0;sudo python3 PIPAttack.py "ssh"
+: 1687104043:0;cd Kali-Scripts
+: 1687104294:0;conky
+: 1687105129:0;apt -y -qq install exe2hexbat
+: 1687105200:0;agi wdiff
+: 1687105229:0;agi vfeed
+: 1687105306:0;agi gitg
+: 1687105351:0;apt -y -qq install silversearcher-ag
+: 1687105392:0;sudo git clone -q -b master https://github.com/ripsscanner/rips.git /opt/rips-git/
+: 1687105411:0;gitpull
+: 1687105427:0;sudo git oull
+: 1687105431:0;sudo git pull
+: 1687105450:0;pushd /opt/rips-git/
+: 1687105463:0;popd
+: 1687105548:0;cd /opt/rips-git
+: 1687105622:0;nano README.md
+: 1687105697:0;sudo gedit /etc/apache2/conf-available/rips.conf
+: 1687105774:0;sudo ln -sf /etc/apache2/conf-available/rips.conf /etc/apache2/conf-enabled/rips.conf
+: 1687105778:0;systemctl restart apache2
+: 1687105825:0;agi pv
+: 1687105838:0;agi iotop
+: 1687105843:0;iotop
+: 1687105870:0;agi apt -y -qq install ca-certificates
+: 1687105874:0;sudo apt -y -qq install ca-certificates
+: 1687105919:0;sudo apt -y -qq install daemonfs
+: 1687106110:0;sudo git clone -q -b master https://github.com/nullmode/gnmap-parser.git /opt/gnmap-parser-git/
+: 1687106145:0;cd /opt/gnmap-parser-git
+: 1687106160:0;sudo ./gnmap-parser.sh
+: 1687106276:0;agi bridge_utils
+: 1687154132:0;apt search fruitywifi
+: 1687154400:0;clone https://github.com/xtr4nge/FruityWifi
+: 1687154436:0;gfcd https://github.com/xtr4nge/FruityWifi
+: 1687154444:0;gfc https://github.com/xtr4nge/FruityWifi
+: 1687154448:0;cd FruityWifi
+: 1687154679:0;n
+: 1687155416:0;nautilus
+: 1687156110:0;clone
+: 1687156117:0;dir-search
+: 1687156122:0;dirsearch
+: 1687156129:0;dirsearch fruit
+: 1687156302:0;./install-FruityWiFi.sh
+: 1687156644:0;/etc/init.d/fruitywifi start
+: 1687156656:0;/etc/init.d/php5-fpm start
+: 1687156721:0;apt-get -y install nginx php5-fpm
+: 1687156736:0;apt search php5-fpm
+: 1687156842:0;apt search phpcore
+: 1687156849:0;apt search php
+: 1687171280:0;set-title-tab
+: 1687171514:0;myip
+: 1687172803:0;sudo docker run -it --name lockdoor-container -w /Lockdoor-Framework --net=host sofianehamlaoui/lockdoor
+: 1687172865:0;git clone https://github.com/SofianeHamlaoui/Lockdoor-Framework.git && cd Lockdoor-Framework && chmod +x ./install.sh && ./install.sh
+: 1687172935:0;chmod +x install.sh
+: 1687172939:0;sudo ./install.sh
+: 1687173776:0;lockdoor
+: 1687175420:0;pip install pytorch
+: 1687175435:0;pip install --upgrade pip
+: 1687175447:0;pip3 install openmim\
+mim install 'mmcv>=2.0.0'\
+mim install 'mmengine'\
+mim install 'mmagic'
+: 1687177142:0;cargo install atuin
+: 1687177197:0;lynis
+: 1687177338:0;sudo wget https://github.com/sqshq/sampler/releases/download/v1.1.0/sampler-1.1.0-linux-amd64 -O /usr/local/bin/sampler\
+sudo chmod +x /usr/local/bin/sampler
+: 1687177546:0;echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
+: 1687177554:0;sudo apt update && sudo apt install gum
+: 1687213374:0;gum write
+: 1687213385:0;gum write > story.txt
+: 1687213449:0;echo Strawberry >> story.txt
+: 1687213474:0;cat story.txt | gum filter
+: 1687213584:0;gum spin --spinner dot --title "Buying Bubble Gum..." -- sleep 5
+: 1687213604:0;gum spin --spinner minidot --title "Buying Bubble Gum..." -- sleep 5
+: 1687213619:0;gum spin --spinner pulse --title "Buying Bubble Gum..." -- sleep 5
+: 1687213627:0;gum --help
+: 1687213733:0;gum format --help
+: 1687213768:0;gum input --help
+: 1687213779:0;gum join
+: 1687213783:0;gum join --help
+: 1687213802:0;gum spin --help
+: 1687213822:0;gum style --help
+: 1687213854:0;gum write --help
+: 1687214013:0;gum filter --height 20 < $HISTFILE
+: 1687214170:0;alias please="gum input --password | sudo -nS"
+: 1687214177:0;please
+: 1687214319:0;chmod +x fetch.sh
+: 1687214322:0;./fetch
+: 1687214473:0;cd Giy
+: 1687214477:0;git clone https://github.com/info-mono/os-ansi.git
+: 1687214530:0;./fetch.sh
+: 1687216594:0;git clone https://github.com/info-mono/colorstrip.git ~/.local/share/colorstrip\
+ln -s ~/.local/share/colorstrip/bin/colorstrip ~/.local/bin/colorstrip
+: 1687216618:0;colorstrip
+: 1687217520:0;curl -sS https://starship.rs/install.sh | sh
+: 1687217876:0;export STARSHIP_CONFIG=~/.config/starship/starship.toml
+: 1687218785:0;starship::config
+: 1687225732:0;cd Dracnmap
+: 1687225762:0;./dracnmap-v2.2.sh
+: 1687226003:0;sudo nikto https://drone-hacks.com/
+: 1687226012:0;nikto --help
+: 1687226030:0;sudo nikto -host https://drone-hacks.com/
+: 1687227322:0;histroy
+: 1687227538:0;cd easy-hcx
+: 1687227545:0;sudo ./easy-hcx.sh
+: 1687227677:0;cd Hacke-WiFi
+: 1687227682:0;./wifi-hacker.sh
+: 1687227691:0;chmod +x wifi-hacker.sh
+: 1687227834:0;sudo ./wifi-hacker.sh
+: 1687228161:0;sudo hcxdumptool
+: 1687228181:0;sudo hcxdumptool -i wlan1mon
+: 1687228194:0;sudo hcxdumptool --help
+: 1687228264:0;sudo hcxdumptool -i wlan1mon --do_rcascan
+: 1687231386:0;flatpak install flathub com.discordapp.Discord
+: 1687231447:0;flatpak run com.discordapp.Discord
+: 1687240045:0;sudo mkdir -p /etc/apt/keyrings
+: 1687240059:0;curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+: 1687240085:0;sudo apt update && sudo apt install mods
+: 1687240718:0;clone https://github.com/go-skynet/LocalAI
+: 1687240770:0;wget https://gpt4all.io/models/ggml-gpt4all-j.bin -O models/ggml-gpt4all-j
+: 1687242426:0;cp -rf prompt-templates/ggml-gpt4all-j.tmpl models/
+: 1687242443:0;docker-compose up -d --pull always
+: 1687262490:0;apt search pmenu
+: 1687262619:0;inxi
+: 1687262645:0;inxi --help
+: 1687262660:0;nmon
+: 1687262843:0;fdupes
+: 1687262850:0;fdupes ~
+: 1687262923:0;agi rlwrap xsel
+: 1687262952:0;curl https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh
+: 1687262979:0;sudo chmod +x /usr/local/bin/cht.sh
+: 1687262985:0;cht.sh
+: 1687263024:0;cht.sh nmap
+: 1687263068:0;fkill
+: 1687263076:0;sudo snap install fkill
+: 1687263940:0;chmod +x eDEX-UI-Linux-x86_64.AppImage
+: 1687263990:0;activeshell
+: 1687264557:0;exit
+: 1687264590:0;npm install -g tldr
+: 1687264614:0;tldr
+: 1687264625:0;tldr --help
+: 1687264648:0;tldr --update
+: 1687264853:0;agugu
+: 1687318800:0;sudo snap install dust
+: 1687318812:0;dust
+: 1687318825:0;sudo dust
+: 1687318841:0;logout
+: 1687321197:0;fd
+: 1687321244:0;agi duf broot
+: 1687321248:0;agi duf
+: 1687321279:0;cargo install du-dust
+: 1687321493:0;sudo apt install build-essential libxcb1-dev libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev -y
+: 1687321543:0;cargo install --locked --path
+: 1687321559:0;cargo install --locked --path /bin
+: 1687321626:0;clone https://github.com/Canop/broot
+: 1687321735:0;rustc
+: 1687321807:0;rust
+: 1687321817:0;cargo --help
+: 1687321825:0;cargo update
+: 1687321856:0;cargo install --locked --path .
+: 1687322073:0;rustup update
+: 1687322126:0;curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+: 1687322181:0;agi rust
+: 1687322195:0;agi rustc
+: 1687322719:0;agug rustc
+: 1687322743:0;sudo apt autoremove
+: 1687322773:0;agi fd ag
+: 1687322777:0;ag
+: 1687322789:0;ripgrep
+: 1687322916:0;curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
+: 1687322926:0;sudo dpkg -i ripgrep_13.0.0_amd64.deb
+: 1687322936:0;agi silversearcher-ag
+: 1687322984:0;rust-fd-find
+: 1687322987:0;agi rust-fd-find
+: 1687323066:0;agi fd-find
+: 1687323129:0;agi tldr
+: 1687323156:0;bottom
+: 1687323161:0;sudo snap install bottom
+: 1687323179:0;agi gtop
+: 1687323190:0;sudo snap install gtop
+: 1687323212:0;procs
+: 1687323217:0;sudo snap install procs
+: 1687323256:0;httpie
+: 1687323269:0;sudo snap install httpie
+: 1687323294:0;xh
+: 1687323309:0;sudo snap install curlie
+: 1687323312:0;curlie
+: 1687325473:0;dog distantrea.ch
+: 1687325486:0;dog http://distantrea.ch
+: 1687325505:0;dog http://nolimitdronez.com
+: 1687325508:0;dog
+: 1687325569:0;dog nolimitdronez.com -t MX
+: 1687325587:0;du
+: 1687325603:0;00duf
+: 1687325664:0;tree
+: 1687325685:0;tree --help
+: 1687325718:0;dog distantreach
+: 1687325762:0;gtop --help
+: 1687325861:0;sudo $ npm install gtop -g
+: 1687325870:0;gtop
+: 1687326504:0;sudo snap install blender
+: 1687329444:0;blender
+: 1687331784:0;gum input > answer.txt
+: 1687331803:0;gum
+: 1687331814:0;gum choose
+: 1687331900:0;gum choose Dragons Eggs Snadwhich
+: 1687331950:0;echo "Pick a card, any card..."\
+CARD=$(gum choose --height 15 {{A,K,Q,J},{10..2}}" "{âƒ¹ƒ€,âƒ¹¥,âƒ¹£,âƒ¹¦}) \
+echo "Was your card the $CARD?"
+: 1687331998:0;gum confirm && rm file.txt || echo "File not removed"
+: 1687332497:0;curl -sfL https://raw.githubusercontent.com/knipferrc/fm/main/install.sh | sh
+: 1687332537:0;go install github.com/knipferrc/fm@latest
+: 1687332590:0;fm
+: 1687332676:0;alien
+: 1687332706:0;airspy_info
+: 1687334082:0;curl -sL portal.spatiumportae.com | bash
+: 1687334110:0;portal
+: 1687334115:0;sudo snap install portal
+: 1687340234:0;sudo bash
+: 1687340739:0;pyenv install
+: 1687340746:0;pyenv install --help
+: 1687340787:0;pyenv install 3.5.8
+: 1687341199:0;sudoenv pyenv local
+: 1687341214:0;sudoedit
+: 1687341616:0;go install github.com/maaslalani/confetty@latest
+: 1687342161:0;cd datasploit
+: 1687342176:0;pyenv local 3.10.9
+: 1687342325:0;clone https://github.com/DataSploit/datasploit
+: 1687342356:0;pyenv local 2.7.18
+: 1687342416:0;pip2 --help
+: 1687342442:0;pip install --upgrade --force-reinstall -r requirements.txt
+: 1687342481:0;pip2 install praw
+: 1687342727:0;python2 dep_check.py
+: 1687342752:0;python2 active_scan.py
+: 1687342775:0;python2 usernameOsint.py
+: 1687342819:0;sudo apt-get install libxml2-dev libxslt-dev python-dev lib32z1-dev\
+MikelMoli reacted with heart emoji
+: 1687342832:0;sudo apt-get install libxml2-dev libxslt-dev python-dev lib32z1-dev
+: 1687342842:0;sudo apt-get install libxml2-dev libxslt-dev lib32z1-dev
+: 1687342879:0;python2 datasploit.y
+: 1687342892:0;pip2 install --upgrade --force-reinstall -r requirements.txt
+: 1687343071:0;python2 datasploit.py
+: 1687345616:0;charm
+: 1687345706:0;sudo snap install charm
+: 1687345712:0;ssh git.charm.sh
+: 1687346080:0;xclip
+: 1687346105:0;agi xclip
+: 1687346122:0;clone https://github.com/AlexW00/cli-gpt
+: 1687349425:0;chmod +x cli-gpt.sh
+: 1687349513:0;docker build -t localai .
+: 1687394324:0;./cli-gpt.sh
+: 1687395451:0;gum pager < readme.md
+: 1687396062:0;cd projects
+: 1687396067:0;cd airgeddon
+: 1687396073:0;./airgeddon.sh
+: 1687396204:0;cat language_strings.sh | gum choose --limit=1
+: 1687396833:0;chmod +x runningports.sh
+: 1687400099:0;ps -f
+: 1687400113:0;ps --help list
+: 1687400145:0;ps list -C -p
+: 1687400162:0;ps list -C
+: 1687400176:0;ps list --command
+: 1687400180:0;ps
+: 1687400184:0;ps list
+: 1687400191:0;ps -c
+: 1687400194:0;ps c
+: 1687400207:0;./runningports.sh
+: 1687402819:0;sudo ./runningports.sh
+: 1687406857:0;chmod +x scan.sh
+: 1687407716:0;sudo scan.sh
+: 1687414232:0;pyenv --help
+: 1687414473:0;cd .pyenv
+: 1687414594:0;pyenv docotor
+: 1687414710:0;git reset
+: 1687414795:0;git checkout
+: 1687415016:0;make clean
+: 1687415110:0;git clone https://github.com/pyenv/pyenv-doctor.git $(pyenv root)/plugins/pyenv-doctor
+: 1687415126:0;cd pyenv-doctor
+: 1687415155:0;python pyenv-doctor
+: 1687415169:0;./pyenv-doctor
+: 1687415184:0;python3 pyenv-doctor
+: 1687415622:0;sort
+: 1687415635:0;sort --help
+: 1687415704:0;which pyenv
+: 1687415837:0;sudo apt install libedit-dev
+: 1687415909:0;exec $SHELL
+: 1687416174:0;pyenv rehash
+: 1687417723:0;cd ~/.pyenv/plugins/pyenv-installer
+: 1687417753:0;cd ~/.pyenv/plugins/pyenv-update
+: 1687417786:0;cd ~/.pyenv/plugins/pyenv-virtualenv
+: 1687417843:0;cd /home/rival/.pyenv/plugins/pyenv-which-ext
+: 1687417848:0;git reset --hard
+: 1687417867:0;pyenv update
+: 1687417897:0;pyenv --list
+: 1687417905:0;pyenv -f
+: 1687417923:0;pyenv -v
+: 1687417927:0;pyenv -s
+: 1687418812:0;pyenv --debug
+: 1687419824:0;wwpyenv-help --usage completions
+: 1687419844:0;cd bin
+: 1687419890:0;cd libexec
+: 1687419896:0;pyenv-help --usage completions
+: 1687419956:0;grep -iE "^([#%]|--|//)
+: 1687419960:0;grep -iE "^([#%]|--|//)"
+: 1687419980:0;grep -iE ^([#%]|--|//)
+: 1687422793:0;cd nmap
+: 1687422817:0;îƒ·¼ bin/ ïƒ¤ƒµ bottom/ ïƒ¤ƒµ core/ ïƒ¤ƒµ core18/\
+ïƒ¤ƒµ core20/ ïƒ¤ƒµ core22/ ïƒ¤ƒµ dust/ ïƒ¤ƒµ fkill/\
+ïƒ¤ƒµ httpie/ ïƒ¤ƒµ multipass/ ïƒ¤ƒµ portal/ ïƒ¤ƒµ procs/\
+ïƒ¥ƒ» README\
+îƒ·¼ bin/ ïƒ¤ƒµ bottom/ ïƒ¤ƒµ core/ ïƒ¤ƒµ core18/\
+ïƒ¤ƒµ core20/ ïƒ¤ƒµ core22/ ïƒ¤ƒµ dust/ ïƒ¤ƒµ fkill/\
+ïƒ¤ƒµ httpie/ ïƒ¤ƒµ multipass/ ïƒ¤ƒµ portal/ ïƒ¤ƒµ procs/\
+ïƒ¥ƒ» README cd
+: 1687422844:0;sudo nmap 192.168.1.1
+: 1687422873:0;Starting Nmap 7.94 ( https://nmap.org ) at 2023-06-22 01:34 MST\
+Nmap scan report for 192.168.1.1\
+Host is up (0.038s latency).\
+Not shown: 997 closed tcp ports (reset)\
+PORT STATE SERVICE\
+22/tcp filtered ssh\
+23/tcp filtered telnet\
+8080/tcp filtered http-proxy\
+Nmap done: 1 IP address (1 host up) scanned in 4.42 secondsStarting Nmap 7.94 ( https://nmap.org ) at 2023-06-22 01:34 MST\
+Nmap scan report for 192.168.1.1\
+Host is up (0.081s latency).\
+Not shown: 997 closed tcp ports (reset)\
+PORT STATE SERVICE\
+22/tcp filtered ssh\
+23/tcp filtered telnet\
+8080/tcp filtered http-proxy\
+Nmap done: 1 IP address (1 host up) scanned in 3.70 seconds
+: 1687423278:0;
+: 1687423514:0;fif pyenv() {\
+ local command\
+ command="${1:-}"\
+
+: 1687423594:0;fif command="${1:-}"
+: 1687423640:0;fif pyenv ()
+: 1687423643:0;fif pyenv
+: 1687424722:0;fuzzy-history-search
+: 1687424738:0;fuzzy_history_search
+: 1687425160:0;fh
+: 1687425252:0;go help
+: 1687427035:0;cod help
+: 1687427072:0;cod
+: 1687427089:0;cod remove pyenv
+: 1687427101:0;cod remove pyenv install
+: 1687427104:0;cod list
+: 1687427153:0;pyenv init
+: 1687427380:0;go
+: 1687427393:0;go modules
+: 1687427405:0;go help modules
+: 1687427409:0;go list
+: 1687427416:0;go packages
+: 1687427441:0;go tool
+: 1687427450:0;go mod
+: 1687427471:0;pyenv doctor
+: 1687471398:0;mkcd vids
+: 1687471409:0;wget https://www.bellesa.co/videos/1305/wild-mfm-dp-rough
+: 1687471628:0;wget --help
+: 1687471673:0;wget -r 12 -A .mp4 https://www.bellesa.co/videos/1305/wild-mfm-dp-rough"
+: 1687471678:0;wget -r 12 -A .mp4 https://www.bellesa.co/videos/1305/wild-mfm-dp-rough
+: 1687471793:0;wget -r 12 -A .mp4 https://beeg.com/-0172311063143062
+: 1687471815:0;wget -r 12 -A .mp4 http://beeg.com/-0172311063143062
+: 1687471878:0;wget -r 12 -A .mp4 https://beeg.com/4b6a133b-20c6-485e-a7f9-a706d9372dd1
+: 1687474481:0;clone https://github.com/teambi0s/Wall-of-Shame/tree/2a23e9b018e365be7726ed564a1a5b2b2dabe4a3
+: 1687474513:0;clone https://github.com/teambi0s/Wall-of-Shame
+: 1687474538:0;pip3f
+: 1687474688:0;python wallofshame.py --setup
+: 1687474705:0;python wallofshame.py --init
+: 1687474724:0;python wallofshame.py --start
+: 1687474734:0;python wallofshame.py --start default
+: 1687474747:0;pip install jinja2
+: 1687474761:0;pip3 install jinja2
+: 1687474781:0;python wallofshame.py --start traffic
+: 1687474789:0;python wallofshame.py
+: 1687475490:0;dpkg install net.downloadhelper.coapp-1.6.3-1_amd64.deb
+: 1687475512:0;dpkg
+: 1687475521:0;dpkg --help
+: 1687475537:0;cd ~/scripts/Wall-of-Shame
+: 1687475567:0;dpkg --install net.downloadhelper.coapp-1.6.3-1_amd64.deb
+: 1687477813:0;sudo dpkg --remove net.downloadhelper.coapp
+: 1687477832:0;sudo dpkg --purge net.downloadhelper.coapp
+: 1687479349:0;dotenv
+: 1687479378:0;dotenv list
+: 1687479390:0;rm wild-mfm-dp-rough
+: 1687483124:0;aigenerated
+: 1687483138:0;chmod +x port1.sh
+: 1687483143:0;chmod +x port2.sh
+: 1687483147:0;./port1.sh
+: 1687483773:0;agi dialog
+: 1687484346:0;./port2.sh
+: 1687488795:0;chmod +x networkadapter.sh
+: 1687488900:0;rfkill
+: 1687488913:0;1mon
+: 1687488917:0;1man
+: 1687488935:0;ip link show
+: 1687490598:0;cd 6-22
+: 1687494204:0;chmod +x git.sh
+: 1687494208:0;./git.sh
+: 1687494441:0;./networkadapter.sh
+: 1687500216:0;trufflehog /home/rival/scripts/kalitorify/kalitorify.sh
+: 1687500245:0;trufflehog https://github.com/aledipa/Free-GPT4-WEB-API
+: 1687500275:0;trufflehog
+: 1687500283:0;trufflehog --help
+: 1687500302:0;trufflehog --repo https://github.com/aledipa/Free-GPT4-WEB-API
+: 1687500314:0;trufflehog --repo --help
+: 1687501626:0;sudo dkms status
+: 1687501657:0;cd src
+: 1687501666:0;cd 88x2bu
+: 1687501677:0;cd 88x2bu-20210702
+: 1687501691:0;sudo ./install-driver.sh
+: 1687502251:0;sudo sh install-driver.sh
+: 1687502733:0;sudo ./networkadapter.sh
+: 1687503307:0;apt search shadowsocks
+: 1687503329:0;agi shadowsocks-libev
+: 1687503374:0;sudo apt search ktun
+: 1687503392:0;apt search kcptun
+: 1687503424:0;apt search simple-obfs
+: 1687503441:0;agi simple-obfs
+: 1687503538:0;siege
+: 1687503552:0;siege -C
+: 1687503592:0;siege --help
+: 1687503630:0;siege -i
+: 1687503703:0;siege -v openai.com
+: 1687503785:0;cd /home/rival/scripts/PenetrationTestingScripts/Github_Leak/GitHack-master
+: 1687503794:0;python GitHack.py
+: 1687503805:0;python2 GitHack.py
+: 1687503824:0;python2 GitHack.py https://github.com/aledipa/Free-GPT4-WEB-API
+: 1687503846:0;python2 GitHack.py https://github.com/aledipa/Free-GPT4-WEB-API.git
+: 1687503874:0;python2 GitHack.py http://www.openssl.org/.git/
+: 1687506028:0;z
+: 1687506093:0;sudo ./port2.sh
+: 1687508235:0;clone https://github.com/lhunath/scripts
+: 1687508272:0;cd bashlib
+: 1687508321:0;sudo ln -s ~/scripts/scripts/bashlib/bashlib /bin
+: 1687508325:0;bashlib
+: 1687508378:0;cd diagnose
+: 1687508386:0;sudo ./diagnose
+: 1687508592:0;sudo ./port1.sh
+: 1687508726:0;reboot
+: 1687509470:0;lol
+: 1687509769:0;kill -TERM $_ZSH_AUTOSUGGEST_CHILD_PID 7870
+: 1687509802:0;kill -TERM $_ZSH_AUTOSUGGEST_CHILD_PID 16103
+: 1687509893:0;kill -TERM $_ZSH_AUTOSUGGEST_CHILD_PID 5390
+: 1687509898:0;kill -TERM $_ZSH_AUTOSUGGEST_CHILD_PID
+: 1687509918:0;kill -TERM $_ZSH_AUTOSUGGEST_CHILD_PID 9072
+: 1687510096:0;zplug loag
+: 1687510120:0;plugin-load
+: 1687510159:0;plugin-update
+: 1687510787:0;zle -F $_ZSH_AUTOSUGGEST_ASYNC_FDsdsdfsdf
+: 1687510820:0;gz,e ZSH_AUTOSUGGEST_CHILD_PID
+: 1687510832:0;ZSH_AUTOSUGGEST_CHILD_PID
+: 1687510838:0;zle ZSH_AUTOSUGGEST_CHILD_PID
+: 1687510893:0;dsdagu && agug
+: 1687515204:0;exxsh
+: 1687515629:0;d
+: 1687515925:0;ps axuf | pager
+: 1687515969:0;ps axuf | gum pager
+: 1687516346:0;kill -9 %%
+: 1687517029:0;kill %1
+: 1687517282:0;feacd zsh
+: 1687517297:0;cd .config
+: 1687517317:0;cd zsh-autosug
+: 1687517323:0;git ull
+: 1687517337:0;git
+: 1687517368:0;git branch list
+: 1687517381:0;git branch
+: 1687517633:0;command true
+: 1687517707:0;zprof
+: 1687518595:0;xtrace
+: 1687518938:0;aexxsh
+: 1687519011:0;awfexsh
+: 1687520408:0;rm -rf ~/.config/zsh/plugins/zsh-autosuggestions
+: 1687520457:0;zplug list
+: 1687520470:0;zplug check
+: 1687520473:0;zplug
+: 1687520481:0;zplug status
+: 1687520523:0;cd zplug
+: 1687520532:0;cd .zplug
+: 1687520537:0;cd repos
+: 1687520552:0;cd z-shell
+: 1687520558:0;cd zsh-lsd
+: 1687520862:0;cd plugins
+: 1687522773:0;kjkjljkexsh
+: 1687522821:0;read
+: 1687522826:0;read --help
+: 1687523054:0;cd alias
+: 1687523076:0;nmap
+: 1687561160:0;hh
+: 1687572975:0;chmod +x wireless.sh
+: 1687572994:0;chmod +x wirelessch.sh
+: 1687573570:0;sudo aireplay-ng --deauth 2 -e 40:9F:38:FB:7B:5D -a 10:27:F5:E8:50:07 ech0 --ignore-negative-one
+: 1687629748:0;ls .
+: 1687629748:0;htop
+: 1687683881:0;sudo aireplay-ng -0 3 -c 80:02:9C:33:34:E3 -a E0:B9:E5:04:53:65 ech0 --ignore-negative-one
+: 1687684146:0;sudo aireplay-ng -0 3 -c 80:02:9C:33:34:E3 -a 8A:12:E1:CB:90:CD wlan1 --ignore-negative-one
+: 1687684188:0;sudo aireplay-ng -0 3 -a 80:02:9C:33:34:E3 -c 8A:12:E1:CB:90:CD wlan1 --ignore-negative-one
+: 1687684238:0;sudo aireplay-ng
+: 1687684265:0;sudo aireplay-ng -0 10 -c 80:02:9C:33:34:E3 -a 8A:12:E1:CB:90:CD wlan1 --ignore-negative-one
+: 1687684281:0;sudo airgeddon
+: 1687684525:0;ping google.com
+: 1687684863:0;cd Auto-GPT
+: 1687684870:0;sudo ./run
+: 1687685261:0;cd AutO-GPT
+: 1687686473:0;sudio ./run.sh
+: 1687686484:0;sudo ./run.sh
+: 1687894729:0;sudo systemctl start tailscaled
+: 1688109482:0;chmod +x netreplay.sh
+: 1688109783:0;chmod +x netreplay2.sh
+: 1688109793:0;sudo ./netreplay2.sh
+: 1688110557:0;sudo tcpdump --help
+: 1688110789:0;sudo tcpreplay --help
+: 1688110908:0;sudo ./netreplay.sh
+: 1688190285:0;sudo netdiscover
+: 1688203135:0;sudo fern-wifi-cracker
+: 1688208311:0;clone https://github.com/hash3liZer/Subrake.git
+: 1688208651:0;apt update
+: 1688208683:0;$ apt update\
+$ apt install -y qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager vagrant vagrant-libvirt
+: 1688208807:0;sudo apt install -y qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager vagrant vagrant-libvirt
+: 1688209497:0;apt search qemu\  
+: 1688209529:0;sudo apt search qemu
+: 1688210412:0;pyenv local 3.11
+: 1688210456:0;python3 setup.py install
+: 1688210502:0;subrake --help
+: 1688210550:0;chmod +x ./installer.sh
+: 1688210571:0;./installer.sh --deploy
+: 1688210603:0;$ docker build -t subrake:latest .
+: 1688210641:0;sudo docker build -t subrake:latest .
+: 1688210718:0;sudo docker run --rm subrake --help
+: 1688210874:0;sudo subrake -d google.com
+: 1688212199:0;sudo apt-get install python3-dev
+: 1688212211:0;sudo apt-get install python-dev
+: 1688212265:0;sudo apt-get install python-dev-is-python3
+: 1688212337:0;curl -sSL https://install.python-poetry.org | python3 - poetry install # install deps poetry update
+: 1688212356:0;sudo curl -sSL https://install.python-poetry.org | python3 - poetry install
+: 1688212403:0;sudo curl -sSL https://install.python-poetry.org
+: 1688212430:0;python3 - poetry install
+: 1688212442:0;sudo python3 - poetry install
+: 1688212503:0;docker pull vittring/venom:yggdrasil
+: 1688212599:0;sudo docker build -t vittring/venom:yggdrasil .
+: 1688212678:0;docker run --rm -ti vittring/venom:yggdrasil -d nolimitdronez.com
+: 1688212746:0;sudo docker run --rm -ti vittring/venom:yggdrasil
+: 1688213401:0;venom -d http://nolimitdronez.com -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+: 1688213439:0;sudo venom -d nolimitdronez.com -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+: 1688213462:0;sudo venom -d https://www.nolimitdronez.com -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+: 1688213521:0;sudo venom -d "https://www.google.com" -w "/usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt"
+: 1688296712:0;clone https://github.com/ultrasecurity/webkiller.git
+: 1688296764:0;pyenv local 3.11.18
+: 1688296768:0;pyenv list
+: 1688296771:0;pyenv
+: 1688296841:0;pyenv versions
+: 1688296889:0;pyenv global 2.7.18 3.10.9 3.11.2
+: 1688296986:0;python3 webkiller.py
+: 1688298882:0;lspci
+: 1688299379:0;checkports
+: 1688304845:0;chmod +x netcap.sh
+: 1688304851:0;sudo ./netcap.sh
+: 1688307039:0;chmod +x handshake.sh
+: 1688307047:0;chmod +x handshake1.sh
+: 1688307054:0;sudo ./handshake.sh
+: 1688307071:0;sudo ./handshake1.sh
+: 1688312700:0;chmod +x handshake2.sh
+: 1688312871:0;chmod +x handshake3.sh
+: 1688317916:0;ls /sys/class/net | grep -E 'wlan|eth|ath|wlp'
+: 1688317969:0;grep -E
+: 1688318731:0;echo $(iwconfig ${ADAPTER} 2>/dev/null | grep Mode: | cut -d ':' -f 2 | awk '{print $1}')
+: 1688319100:0;chmod +x demo.sh
+: 1688319105:0;./demo.sh
+: 1688319313:0;chmod +x magic.sh
+: 1688319315:0;./magic
+: 1688319320:0;./magic.sh
+: 1688319790:0;sudo airodump-ng --help
+: 1688320194:0;sudo ./handshake2.sh
+: 1688320424:0;xterm --help
+: 1688322742:0;tmux xterm --new
+: 1688322750:0;tmux new
+: 1688322809:0;tmux --help
+: 1688322832:0;tmux new -D xterm
+: 1688323934:0;tmux kill
+: 1688323944:0;tmux kill-session
+: 1688358652:0;echo $(ip route show | awk '(NR == 2) {print $3}')
+: 1688358667:0;echo $(ip route show default | awk '/default/ {print $3}')
+: 1688359056:0;menusel
+: 1688369119:0;autogpt
+: 1688374396:0;cd AI
+: 1688374501:0;sudo autogpt
+: 1688377409:0;lsblk
+: 1688377431:0;sudo ./handshake3.sh
+: 1688381000:0;sudo hcxdumptool -i wlan1 -o /root/wpa-captures/violence/violence.pcapng --enable_status=1 --filtermode=2 --filterlist_ap=/root/wpa-captures/violence/violence.filter
+: 1688381162:0;sudo hcxdumptool -o nicks.pcapng -i wlan1 --enable_status=15
+: 1688381464:0;sudo wifite
+: 1688383108:0;sudo shutdown
+: 1688383118:0;sudo poweroff
+: 1688393110:0;sudo chmod +x capturehandshakes.sh
+: 1688393117:0;sudo chmod +x capturehandshake.sh
+: 1688394548:0;kill -l
+: 1688398122:0;sudo aireplay-ng --help
+: 1688452901:0;cat -v
+: 1688453973:0;sudo
+: 1688467404:0;xdotool
+: 1688468970:0;gum confirm --help
+: 1688469115:0;echo $(gum style "âƒ°ƒ»[1;38;5;${main_color}m${USER}âƒ°ƒ»[0m@âƒ°ƒ»[1;38;5;${main_color}m$(hostname)âƒ°ƒ»[0m
+: 1688469131:0;echo $(gum style "âƒ°ƒ»[1;38;5;${main_color}m${USER}âƒ°ƒ»[0m@âƒ°ƒ»[1;38;5;${main_color}m$(hostname)âƒ°ƒ»[0m"
+: 1688470491:0;cd sunday
+: 1688471111:0;sudo venom -d https://mikebrown3.gumroad.com/ -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+: 1688471126:0;sudo venom -d https://mikebrown3.gumroad.com -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+: 1688471137:0;sudo venom -d mikebrown3.gumroad.com -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+: 1688471198:0;sudo venom --domain http://nolimitdronez.com --wordlists /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+: 1688471228:0;sudo venom --domain mikebrown3.gumroad.com/ --wordlists /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+: 1688471240:0;sudo venom --domain mikebrown3.gumroad.com --wordlists /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+: 1688471266:0;sudo venom --domain mikebrown3.gumroad.com --wordlists "/usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt"
+: 1688471308:0;sudo venom --domain mikebrown3.gumroad.com --wordlists '/usr/share/wordlists/dirbuster/directory-list-1.0.txt'
+: 1688471317:0;venom
+: 1688471363:0;sudo venom --domain mikebrown3.gumroad.com
+: 1688471915:0;sudo apt-get remove dirbuster
+: 1688472061:0;cd Downloads
+: 1688472109:0;dpkg install dirstalk_1.3.3_Linux_arm64.tar.gz
+: 1688472125:0;sudo dpkg install dirstalk_1.3.3_Linux_arm64.tar.gz
+: 1688472139:0;sudo apt install dirstalk_1.3.3_Linux_arm64.tar.gz
+: 1688472216:0;dirstalk
+: 1688472291:0;sudo dirstalk scan https://mikebrown3.gumroad.com/ --dictionary '/usr/share/wordlists/dirbuster/directory-list-1.0.txt'
+: 1688472303:0;dirstalk scan https://mikebrown3.gumroad.com/ --dictionary '/usr/share/wordlists/dirbuster/directory-list-1.0.txt'
+: 1688472358:0;cd /usr/share/wordlists/
+: 1688472377:0;cd discover
+: 1688472384:0;cd discovery
+: 1688472546:0;dirstalk scan https://mikebrown3.gumroad.com/ --dictionary ~/Documents/wordlists/directory.txt
+: 1688472596:0;sudo venom --domain mikebrown3.gumroad.com --wordlists ~/Documents/wordlists/directory.txt
+: 1688472627:0;sudo venom --domain mikebrown3.gumroad.com --wordlists '/home/rival/Documents/wordlists/directory.txt'
+: 1688472640:0;sudo venom --domain mikebrown3.gumroad.com --wordlists=/home/rival/Documents/wordlists/directory.txt
+: 1688475310:0;cd /.config/zsh/scripts
+: 1688475323:0;cd .config/zsh/scripts/
+: 1688475332:0;chmod +x capture.sh
+: 1688476627:0;sudo networkunmanage wlan1
+: 1688476687:0;dropnet wlan1
+: 1688476694:0;sudo aireplay-ng --test wlan1
+: 1688476898:0;sudo ./capturehandshake.sh
+: 1688478462:0;zplug load
+: 1688478467:0;zplug install
+: 1688478470:0;zplug update
+: 1688478921:0;cd .config/zsh/plugins
+: 1688478929:0;cd zsh-users
+: 1688478936:0;cd zsh-autosuggestions
+: 1688478964:0;cd zsh-autocomplete
+: 1688539398:0;sudo enum4linux -a 192.168.86.1
+: 1688539470:0;apt-get install smb4k -y
+: 1688539482:0;agar
+: 1688539518:0;nc -v 192.168.1.1 25
+: 1688539768:0;r
+: 1688539776:0;rehash
+: 1688539780:0;reload
+: 1688539945:0;sudo nmap
+: 1688540450:9;run-help sudo
+: 1688540483:0;echo ^I
+: 1688540512:0;which $(^I)
+: 1688540542:0;echo ^I whoami?
+: 1688540728:0;pip install pip-search
+: 1688540751:0;pip3 install pip-search
+: 1688540760:0;pip-search
+: 1688543572:0;source zsh
+: 1688543963:0;sunday
+: 1688544203:0;historygram
+: 1688550589:1;% git -C ~autocomplete pull
+: 1688552569:0;printc
+: 1688552715:0;exec zsh
+: 1688554847:0;man zshzle
+: 1688559153:0;sudo dnsrecon -d https://mikebrown3.gumroad.com -D /usr/share/wordlists/dnsmap.txt -t std --xml ouput.xml
+: 1688559179:0;sudo dnsrecon -d http://mikebrown3.gumroad.com -D /usr/share/wordlists/dnsmap.txt -t std --xml ouput.xml
+: 1688559197:0;sudo dnsrecon -d www.mikebrown3.gumroad.com -D /usr/share/wordlists/dnsmap.txt -t std --xml ouput.xml
+: 1688562946:0;clone https://github.com/mishakorzik/AdminHack
+: 1688562969:0;bash setup.sh
+: 1688563490:0;chmod +x Admin
+: 1688563503:0;chmod +x AdminHack.sh
+: 1688563537:0;sudo ./AdminHack.sh
+: 1688563565:0;chmod +x setup.sh
+: 1688563602:0;./AdminHack.sh
+: 1688566674:0;chmod +x dnsenu.sh
+: 1688566682:0;sudo ./dnse
+: 1688566758:0;sudo ./dnsenu
+: 1688566769:0;sudo ./dnsenu.sh
+: 1688567370:0;sudo ./dnsenu.sh www.openai.com '/usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-2.3-big.txt'
+: 1688567438:0;sudo ./dnsenu.sh https://openai.com '/usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-2.3-big.txt'
+: 1688585484:0;agi glow
+: 1688585527:0;agi bubbletea
+: 1688585531:0;agi bubbles
+: 1688586079:0;go get github.com/muesli/termenv@latest
+: 1688586093:0;source ~./zshrc
+: 1688586182:0;termenv
+: 1688586213:0;sudo go install github.com/muesli/termenv@latest
+: 1688586482:0;mods -s
+: 1688588282:0;gum list "Select a wireless interface" $(ip link show | grep -o '^[0-9]*: [^:]*' | cut -d' ' -f2) -v\
+read interface
+: 1688588323:0;gum list "Select a wireless interface" $(ip link show | grep -o '^[0-9]*: [^:]*' | cut -d' ' -f2) -v
+: 1688588331:0;gum list
+: 1688588360:0;gum list $(ip link show | grep -o '^[0-9]*: [^:]*' | cut -d' ' -f2)
+: 1688588380:0;gum list | $(ip link show | grep -o '^[0-9]*: [^:]*' | cut -d' ' -f2)
+: 1688588427:0;chmod +x bingcap.sh
+: 1688588432:0;sudo ./bingcap.sh
+: 1688588738:0;gum format --theme=pink -t template testing]
+: 1688588759:0;gum format --theme=pink -t template testing
+: 1688588770:0;gum format --theme=pink testing
+: 1688589233:0;cd ~/scripts/aigenerated
+: 1688589243:0;sudo ./scan.sh
+: 1688662577:0;chmod +x running.sh
+: 1688663591:0;pallete
+: 1688665376:0;sudo ./running.sh
+: 1688811911:0;chmod +x gptscan.sh
+: 1688888577:0;sudo ./gptscan.sh
+: 1688916194:0;chmod +x gifconvert.sh
+: 1688916201:0;./gifconvert.sh
+: 1688921578:0;skate --help
+: 1688921583:0;gum skate --help
+: 1688921590:0;gum skate
+: 1688921620:0;skate list --keys-only "$DATABASE"
+: 1688921630:0;agi skate
+: 1688921655:0;sudo apt-get autoremove
+: 1688921814:0;sudo dpkg-reconfigure wireshark-common
+: 1688921828:0;sudo usermod -a -G wireshark ${USER:-root}
+: 1688921835:0;newgrp wireshark
+: 1688921863:0;pip install howmanypeoplearearound
+: 1688921902:0;pip3 install howmanypeoplearearound
+: 1688922144:0;wlan1
+: 1688922274:0;altnet
+: 1688922643:0;cd profiles
+: 1688922649:0;cd howmanypeoplearearound-0.5.0
+: 1688922688:0;docker build -t howmanypeoplearearound .
+: 1688922830:0;sudo docker run -it --net=host --name howmanypeoplearearound howmanypeoplearearound
+: 1688922907:0;howmanypeoplearearound
+: 1688922980:0;sudo howmanypeoplearearound
+: 1688922991:0;sudoenv howmanypeoplearearound
+: 1688923157:0;howmany
+: 1688923506:0;tshark -
+: 1688923512:0;tshark -h
+: 1688923524:0;tshark --help
+: 1688925834:0;clone https://github.com/derv82/wifite2.git
+: 1688925853:0;rmvenv
+: 1688925868:0;pyenv local 3.11.2\  
+: 1688925909:0;sudo Wifite.py
+: 1688925922:0;sudo python3 Wifite.py
+: 1688926243:0;clone https://github.com/JPaulMora/Pyrit.git
+: 1688926293:0;sudo pip install psycopg2
+: 1688926320:0;sudo pip install scapy
+: 1688926337:0;python setup.py clean
+: 1688926346:0;python setup.py build
+: 1688926364:0;sudo python setup.py install
+: 1688926381:0;python setup.py install
+: 1688926414:0;wifite
+: 1688926615:0;pyrit list_cores
+: 1688926621:0;pyrit
+: 1688926625:0;pyrit --help
+: 1688926632:0;pyrit -h
+: 1688926682:0;pyrit attack_passthrough
+: 1688929313:0;curl -fsSL https://crystal-lang.org/install.sh | sudo bash
+: 1688929459:0;crystal
+: 1688929515:0;clone https://github.com/OVERBYTEME/WHITECAT
+: 1688929538:0;sudo crystal build --release main.cr -o whitecat
+: 1688929712:0;sudo chmod +x setup.sh
+: 1688929748:0;sudo ./setup.sh
+: 1688929785:0;whtiecat
+: 1688929846:0;chmod +x script
+: 1688929853:0;sudo ./script
+: 1688929887:0;sudo ./wirelessch.sh
+: 1688930791:0;runscript capture.sh
+: 1688930812:0;cd zsh
+: 1688930828:0;sudo ./capture.sh
+: 1688931310:0;ls -l ~/.zshrc
+: 1688931336:0;chmod u+rx ~/.zshrc
+: 1688931360:0;chmod u+rx ~/.config/zsh/.zshrc
+: 1688931420:0;echo $SHELL
+: 1688931509:0;zsh
+: 1688931880:0;echo $plugins
+: 1688932484:0;gum help
+: 1688933476:0;$-
+: 1688933495:0;which "$-"
+: 1688933506:0;echo "$-"
+: 1688933532:0;"$PWD"
+: 1688933538:0;echo "$PWD"
+: 1688933548:0;echo "$$"
+: 1688933572:0;"${EDITOR:-vi}" "$file"
+: 1688934153:0;cd zsh/scripts
+: 1688934202:0;gum input help
+: 1688934392:0;gum input --prompt "Enter the name of the environment variable you want to edit:" --placeholder "Variable" --prompt.foreground 99 --cursor.foreground 99 --width 50
+: 1688934568:0;env | gum table --header "Variable,Value" --delimiter "="
+: 1688934584:0;gum table --header "Variable,Value" --delimiter "=" | env
+: 1688934628:0;gum table --header "Variable,Value" --delimiter "="
+: 1688935039:0;gum table "Variable,Value" --delimiter "="
+: 1688935861:0;gum table --file='findBSSID-01.csv'
+: 1688935875:0;gum table < findBSSID-01.csv'
+: 1688935878:0;gum table < findBSSID-01.csv
+: 1688936028:0;newest
+: 1688936294:0;rpfzf
+: 1688937477:0;cut -d ',' -f 1
+: 1688937701:0;gum table < dump-0.csv
+: 1688937709:0;gum table < dump-04.csv
+: 1688937785:0;gum table < stuff.csv
+: 1688937809:0;gum pager < dump-04.csv
+: 1688937932:0;sudo ./environment.sh
+: 1688937976:0;env
+: 1688938452:0;echo '{{ Bold "Tasty" }} {{ Italic "Bubble" }} {{ Color "99" "0" " Gum " }}' | gum format -t template
+: 1688938503:0;gum filter --help
+: 1688938533:0;gum filter < /tmp/env_vars.csv
+: 1688938747:0;echo set | grep '^[a-zA-Z_][a-zA-Z_0-9]*=' | awk -F= '{ printf "%s,%s\n", $1, $2 }
+: 1688938763:0;echo "set | grep '^[a-zA-Z_][a-zA-Z_0-9]*=' | awk -F= '{ printf "%s,%s\n", $1, $2 }"
+: 1688938791:0;alias
+: 1688938848:0;exsh
+: 1688992953:0;cd scripts
+: 1688992964:0;chmod +x environment.sh
+: 1688993733:0;gum pager --help
+: 1688993749:0;gum pager
+: 1688993755:0;gum table
+: 1688993759:0;gum table --help
+: 1688995241:0;./environment.sh
+: 1688997410:0;source ~/.zshrc
+: 1689011956:0;clone https://github.com/SNGWN/Burp-Suite
+: 1689011958:0;git status -sb .
+: 1689011994:0;chmod +x Kali_Linux_Setup.sh
+: 1689012002:0;sudo ./Kali_Linux_Setup.sh
+: 1689012945:0;sudo burp
+: 1689013032:0;burp
+: 1689015413:0;sudo chatgpt
+: 1689038663:0;whois https://www.heavensgate.com/
+: 1689038701:0;whois --help
+: 1689039745:0;cd .config/zsh/scripts
+: 1689039758:0;chmod +x domainlookup.sh
+: 1689039768:0;sudo ./domainlookup.sh
+: 1689039773:0;sudo ./domainlookup.sh --help
+: 1689039809:0;sudo ./domainlookup.sh --verbose
+: 1689039827:0;sudo ./domainlookup.sh --verbose https://www.heavensgate.com/
+: 1689040134:0;sudo ./domainlookup.sh --verbose https://www.heavensgate.com
+: 1689040151:0;sudo ./domainlookup.sh --verbose google.com
+: 1689040188:0;sudo ./domainlookup.sh --verbose heavensgate.com
+: 1689138148:0;iw info pan1
+: 1689138152:0;iw pan1
+: 1689138162:0;iw pan1 info
+: 1689138173:0;iw info
+: 1689138184:0;cheat iw
+: 1689138210:0;iw dev pan1 link
+: 1689138215:0;iw dev link
+: 1689138221:0;iw dev wlan0 link
+: 1689140191:0;./web_crawler.sh heavensgate.com
+: 1689141498:0;cd aigenerated
+: 1689141502:0;cd Today
+: 1689141848:0;man gobuster
+: 1689141901:0;gobuster -h
+: 1689142016:0;dirb -h
+: 1689142023:0;dirb --help
+: 1689143560:0;dirb
+: 1689143702:0;dirb http://heavensgate.com -i
+: 1689143719:0;dirb heavensgate.com -i
+: 1689143745:0;dirb http://heavensgate.com -w /usr/share/wordlists/dirb/common.txt
+: 1689143813:0;dirb http://heavensgate.com -f -w /usr/share/wordlists/dirb/common.txt
+: 1689144049:0;sudo ./web_crawler.sh
+: 1689144253:0;sudo dirb http://heavensgate.com -w /usr/share/dirb/wordlists/common.txt -o dirb_results.txt
+: 1689148556:0;gfc https://github.com/0x221b/Wordlists
+: 1689148585:0;cd Wordlists
+: 1689148590:0;cd Enum
+: 1689148693:0;clone https://github.com/drtychai/wordlists
+: 1689148858:0;cd wordlistctl
+: 1689148888:0;pyenv local 3.11.2
+: 1689148891:0;mkvenv
+: 1689148912:0;wordlistraider
+: 1689148927:0;wordlistraider -h
+: 1689148960:0;wordlists -h
+: 1689148996:0;cd -
+: 1689149022:0;python3 wordlistctl.py
+: 1689149028:0;pip3r
+: 1689149041:0;pip install --upgradepip
+: 1689149053:0;pip3r --upgradepip
+: 1689149067:0;pip3 install --upgradepip
+: 1689149098:0;pip3 install --upgrade pip
+: 1689149904:0;python wordlistctl.py
+: 1689149916:0;python wordlistctl.py list
+: 1689150151:0;python wordlistctl.py dir
+: 1689150172:0;python wordlistctl.py --help
+: 1689151573:0;lsusb
+: 1689152006:0;python wordlistctl.py fetch anyapex-web-directory-crawler
+: 1689152068:0;python wordlistctl.py fetch all-dirs
+: 1689152090:0;python wordlistctl.py search dir
+: 1689152142:0;sudo python wordlistctl.py fetch assetnote_httparchive_directories_1m_2020_11_18
+: 1689152589:0;sudo hcxdumptool -i wlan1
+: 1689152639:0;sudo hcxdumptool -i wlan1 -o /home/rival/Documents/allover.pcapng
+: 1689153745:0;sudo htop
+: 1689154709:0;chkrootkit
+: 1689154995:0;agi gnome-shell-extension-system-monitor
+: 1689156929:0;cd aigenergate
+: 1689156933:0;cd today
+: 1689156952:0;agi feroxbuster
+: 1689156959:0;feroxbuster -h
+: 1689157114:0;cd ~/.config/zsh/scripts
+: 1689157134:0;chmod +x launcher.zsh
+: 1689157138:0;./launcher.zsh
+: 1689157457:0;gum mna
+: 1689157495:0;gum choose --help
+: 1689157552:0;palette
+: 1689157807:0;soucezsh
+: 1689159494:0;sudo feroxbuster -u http://www.heavensgate.com -x pdf -x js,html,zip -x php txt json,docx
+: 1689161293:0;lscripts
+: 1689179084:0;gum file --help
+: 1689179099:0;gum file /usr/share/wordlists
+: 1689180271:0;gum file "/home/rival/wordlists/"
+: 1689180322:0;gum file ~/wordlists/
+: 1689180330:0;gum file /wordlists
+: 1689180363:0;gum file /home/rival/wordlists
+: 1689180475:0;gum file --directory=$HOME/wordlists
+: 1689180544:0;gum file <$HOME/wordlists>
+: 1689180560:0;gum file </home/rival/wordlists>
+: 1689180571:0;gum file < /home/rival/wordlists
+: 1689180583:0;sudo gum file
+: 1689180645:0;$HOME/wordlists | gum file
+: 1689182100:0;chmod +x web_crawler.sh
+: 1689182106:0;./web_crawler.sh
+: 1689245007:0;sudo disks
+: 1689245188:0;sudo gparted
+: 1689248283:0;ssh
+: 1689248310:0;enable tailscaled
+: 1689248314:0;enable tailscale
+: 1689248324:0;sudo systemctl enable tailscaled
+: 1689380922:0;echo $1
+: 1689380933:0;which $(1)
+: 1689383733:0;go install github.com/chip/pathos@latest
+: 1689383752:0;pathos
+: 1689383780:0;showpath
+: 1689384473:0;go get github.com/muesli/termenv
+: 1689384479:0;sourcezshi
+: 1689384501:0;go install github.com/muesli/termenv
+: 1689384509:0;go install github.com/muesli/termenv@latest
+: 1689384990:0;duf
+: 1689385004:0;duf --help
+: 1689385054:0;duf --all
+: 1689404946:0;echo $(which bash)
+: 1689404988:0;echo ${SHELL##*/}
+: 1689405126:0;echo $STY
+: 1689405141:0;which $STY
+: 1689405159:0;echo $(which $STY)
+: 1689406481:0;agi cpupower
+: 1689406492:0;cpupower info
+: 1689406780:0;capabilities
+: 1689406971:0;python3 -m pip install --upgrade pip
+: 1689407025:0;pipx install argcomplete
+: 1689407041:0;pip install pipx
+: 1689407050:0;pip3 install pipx
+: 1689407068:0;python3 -m pip3 install --upgrade pwntools
+: 1689407074:0;python3 -m pip install --upgrade pwntools
+: 1689407078:0;pwntools
+: 1689407108:0;agu
+: 1689407116:0;agug
+: 1689407390:0;colorls
+: 1689407417:0;gls
+: 1689407533:0;lsd --help
+: 1689407618:0;ls --help
+: 1689407661:0;'ls' --help
+: 1689407838:0;pastebinit -P -a god
+: 1689407861:0;netdiscover
+: 1689407880:0;sudo apachectl
+: 1689407897:0;sudo apachectl fullstatus
+: 1689407968:0;gph
+: 1689407970:0;gpg
+: 1689408597:0;agi yadm
+: 1689409205:0;echo $FZF_DIR
+: 1689409919:0;echo $fpath
+: 1689410251:0;grep --help
+: 1689410272:0;grep -F
+: 1689410552:0;ls -f
+: 1689410558:0;lsd -f
+: 1689410571:0;'ls' -f
+: 1689410777:0;cd $ZSH_CONFIG/plugins/fzf-tab
+: 1689410786:0;git pull
+: 1689412677:0;cd scr **
+: 1689412691:0;**
+: 1689412836:0;history
+: 1689412844:0;history=0
+: 1689412888:0;fc "iwconfig"
+: 1689412896:0;histr
+: 1689412904:0;hstr
+: 1689413143:0;bindkey
+: 1689413168:0;bind -d
+: 1689413376:0;bind -u
+: 1689413518:0;lsd
+: 1689413894:0;ZSH_AUTOSUGGEST_USE_ASYNC=true
+: 1689414078:0;enable-fzf-tab
+: 1689421212:0;"$@" | ccze -A
+: 1689421238:0;echo '"$@" | ccze -A'
+: 1689421243:0;ccze
+: 1689421260:0;ccze -h
+: 1689429560:0;ls
+: 1689429714:0;whitecat
+: 1689429736:0;sudo whitecat
+: 1689429751:0;sudo airmon-ng -i wlan1
+: 1689429762:0;sudo airodump-ng -i wlan1
+: 1689430168:0;cd whitecat
+: 1689430179:0;cd Git
+: 1689430185:0;cd WHITECAT
+: 1689430982:0;mon
+: 1689430991:0;apt search mon
+: 1689431056:0;netmon
+: 1689431458:0;iwconfig
+: 1689431471:0;ifconfig
+: 1689432571:0;cna
+: 1689432969:0;$ find . -type f -empty -prune -o -type f -printf "%s\t" -exec file --brief --mime-type '{}' \; | awk 'BEGIN {printf("%12s\t%12s\n","bytes","type")} {type=$2; a[type]+=$1} END {for (i in a) printf("%12u\t%12s\n", a[i], i)|"sort -nr"}'
+: 1689433105:0;ifconfig -a | grep -Po '\b(?!255)(?:\d{1,3}\.){3}(?!255)\d{1,3}\b' | xargs nmap -A -p0-
+: 1689433232:0;ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
+: 1689433528:1;history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+: 1689433598:1;ps aux | sort -nk +4 | tail
+: 1689434374:0;gum ask
+: 1689434443:0;man gum
+: 1689434445:1;gum man
+: 1689436939:0;ps aux --sort=-%mem | awk 'NR<=11'
+: 1689437187:0;top10
+: 1689438222:0;pmk
+: 1689438578:4;lscript
+: 1689438691:1;sourcezsh
+: 1689438699:1;pkm
+: 1689438720:0;cd $ZSH_CONFIG
+: 1689489242:0;cd
+: 1690390874:0;chatgpt-s
+: 1690390889:1;chatgpt-c
+: 1690390897:0;chatgpt-s New
+: 1690391061:0;clock
+: 1690391066:4;tty-clock -csSb -C3
+: 1690391146:0;xplr --print-pwd-as-result
+: 1690391162:0;agi xplr
+: 1690391254:1;wget https://github.com/sayanarijit/xplr/releases/latest/download/xplr-$platform.tar.gz
+: 1690391277:1;asroot
+: 1690391289:0;tar xzvf xplr-$platform.tar.gz
