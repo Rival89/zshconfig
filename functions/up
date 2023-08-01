@@ -1,0 +1,7 @@
+function up() {
+  local path=""
+  for i in $(/usr/bin/seq 1 "$1"); do
+    path="../$path"
+  done
+  cd "$path" || exit
+}

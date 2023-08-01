@@ -1,0 +1,12 @@
+function finder() {
+  if [ -z "$1" ]; then
+    echo "Usage: f [search term] [file extension]"
+    return 1
+  fi
+
+  if [ -n "$2" ]; then
+    find . -type f -iname "*$1*" -name "*.$2"
+  else
+    find . -type f -iname "*$1*"
+  fi
+}

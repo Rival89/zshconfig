@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+function cloak() {
+    local files f
+    files=(/home/rival/.config/vpn/CON/*)
+
+    # Set the PS3 prompt with color codes
+    PS3=$'\e[1m\e[32mSelect a configuration file to start VPN connection:\e[0m '
+
+    select f in ${files[@]}; do
+        if [[ -n $f ]]; then
+            sudo openvpn "$f"
+            break
+        else
+            echo "Invalid selection"
+        fi
+    done
+    
+    # Display the IP address of the connected server
+echo "Connected to $(curl -sSf http://ipv4.icanhazip.com/)"
+}

@@ -1,0 +1,8 @@
+function dirsearch() {
+  if [ -z "$1" ]; then
+    echo "Usage: find-in-dir [search term]"
+    return 1
+  fi
+
+  find . -iname "*$1*"
+}
