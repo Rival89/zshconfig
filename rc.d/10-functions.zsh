@@ -1,45 +1,24 @@
 #!/usr/bin/zsh
 
-## Distant Reach Functions
-
-
 # #Extract nmap information
 function extractPorts(){
     ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
     ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
-    echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
-    echo -e "\t[*] IP Address: $ip_address"  >> extractPorts.tmp
-    echo -e "\t[*] Open ports: $ports\n"  >> extractPorts.tmp
-    echo $ports | tr -d '\n' | xclip -sel clip
-    echo -e "[*] Ports copied to clipboard\n"  >> extractPorts.tmp
-    cat extractPorts.tmp; rm extractPorts.tmp
+    echo -e "\n[*] Extracting information...\n"
+    echo -e "\t[*] IP Address: $ip_address"
+    echo -e "\t[*] Open ports: $ports\n"
+    if command -v pbcopy >/dev/null 2>&1; then
+        echo $ports | tr -d '\n' | pbcopy
+        echo -e "[*] Ports copied to clipboard\n"
+    elif command -v xclip >/dev/null 2>&1; then
+        echo $ports | tr -d '\n' | xclip -sel clip
+        echo -e "[*] Ports copied to clipboard\n"
+    fi
 }
 	
-	
- #fzf improvement
+#fzf improvement
 function betterfzf(){
-    if [ "$1" = "h" ]; then
-    fzf -m --reverse --preview-window down:20 --preview '[[ $(file --mime {}) =~ binary ]] &&
-    echo {} is a binary file ||
-    (bat --style=numbers --color=always {} ||
-    highlight -O ansi -l {} ||
-    coderay {} ||
-    rougify {} ||
-    cat {}) 2> /dev/null | head -500'
-      else
-	fzf -m --preview '[[ $(file --mime {}) =~ binary ]] &&
-	                echo {} is a binary file ||
-	                (bat --style=numbers --color=always {} ||
-	                highlight -O ansi -l {} ||
-	                coderay {} ||
-	                rougify {} ||
-	                cat {}) 2> /dev/null | head -500'
-	fi
-}
-
-function rmk(){
-    scrub -p dod $1
-    shred -zun 10 -v $1
+    fzf -m --preview '[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500'
 }
 
 autoload -Uz up-line-or-beginning-search
@@ -65,25 +44,26 @@ bindkey '^E' fh
 
 # Attach to exisiting tmux session
 tsa(){
-	tmux ls -F \#S > /dev/null 2>&1
-	if [ $? -eq 0 ]
-	then
-		SESSION=$(tmux ls -F \#S | gum filter --placeholder "Attach to a TMUX session...")
+	if command -v tmux >/dev/null 2>&1; then
+		tmux ls -F \#S > /dev/null 2>&1
+		if [ $? -eq 0 ]
+		then
+			SESSION=$(tmux ls -F \#S | fzf --prompt "Attach to a TMUX session...")
 
-		if [ ! -z "$SESSION" ]; then
-			tmux attach -t "$SESSION"
+			if [ ! -z "$SESSION" ]; then
+				tmux attach -t "$SESSION"
+			fi
+		else
+			echo "There is no existing TMUX session."
 		fi
 	else
-		echo "There is no existing TMUX session."
+		echo "tmux is not installed."
 	fi
 }
 
 function top20() {
     du -ah . | sort -rh | head -20
 }
-
-# TITLE: Zsh Functions
-# AUTHOR: Sreedev Kodichath
 
 # move files to trash instead of removing
 trash(){
@@ -104,25 +84,28 @@ color256() {
     print -cP $colors
 }
 
-# compile plugins after change in .zsh_plugins
-antibody-compile(){
-  antibody bundle < ~/.zsh/plugins > ~/.zsh/plugins.sh
-}
-
 # filter & kill active tmux sessions
 tmux-kill(){
-  tmux list-sessions | awk 'BEGIN{FS=":"}{print $1}' | fzf | xargs -n 1 tmux kill-session -t
+  if command -v tmux >/dev/null 2>&1; then
+	  tmux list-sessions | awk 'BEGIN{FS=":"}{print $1}' | fzf | xargs -n 1 tmux kill-session -t
+  else
+	  echo "tmux is not installed."
+  fi
 }
 
 # change directories in style
 lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
+	if command -v lf >/dev/null 2>&1; then
+		tmp="$(mktemp)"
+		lf -last-dir-path="$tmp" "$@"
+		if [ -f "$tmp" ]; then
+			dir="$(cat "$tmp")"
+			rm -f "$tmp"
+			[ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+		fi
+	else
+		echo "lf is not installed."
+	fi
 }
 
 # ix.io pastebin
@@ -175,33 +158,44 @@ keycode() {
 
 # disable NMI Watchdog
 disable_nmi_watchdog() {
-  sudo sysctl kernel.nmi_watchdog=0
-}
-
-# APL Keyboard - Alt + Key
-init-apl() {
-  setxkbmap -layout us,apl -variant ,dyalog -option grp:switch
+	if [[ "$(uname)" == "Linux" ]]; then
+		sudo sysctl kernel.nmi_watchdog=0
+	else
+		echo "This function is only available on Linux."
+	fi
 }
 
 vm-start() {
-  machine="$(VBoxManage list vms | fzf | awk '{gsub(/"/, "", $1); print $1}')"
-  VBoxManage startvm $machine --type headless
+	if command -v VBoxManage >/dev/null 2>&1; then
+		machine="$(VBoxManage list vms | fzf | awk '{gsub(/"/, "", $1); print $1}')"
+		VBoxManage startvm $machine --type headless
+	else
+		echo "VirtualBox is not installed."
+	fi
 }
 
 vm-tunnel() {
-  machine="$(VBoxManage list vms | fzf | awk '{gsub(/"/, "", $1); print $1}')"
-  ip="$(VBoxManage guestproperty enumerate $machine | grep IP | grep-ip | head -n1)"
-  abduco -n vm-tun ssh $1@$ip -D 1337 -C -q -N -v
+	if command -v VBoxManage >/dev/null 2>&1; then
+		machine="$(VBoxManage list vms | fzf | awk '{gsub(/"/, "", $1); print $1}')"
+		ip="$(VBoxManage guestproperty enumerate $machine | grep IP | grep-ip | head -n1)"
+		abduco -n vm-tun ssh $1@$ip -D 1337 -C -q -N -v
+	else
+		echo "VirtualBox is not installed."
+	fi
 }
 
 vm-connect() {
-  machine="$(VBoxManage list vms | fzf | awk '{gsub(/"/, "", $1); print $1}')"
-  ip="$(VBoxManage guestproperty enumerate $machine | grep IP | grep-ip | head -n1)"
-  if [ -z "$1" ]; then
-    ssh $USER@$ip
-  else
-    ssh $1@$ip
-  fi
+	if command -v VBoxManage >/dev/null 2>&1; then
+		machine="$(VBoxManage list vms | fzf | awk '{gsub(/"/, "", $1); print $1}')"
+		ip="$(VBoxManage guestproperty enumerate $machine | grep IP | grep-ip | head -n1)"
+		if [ -z "$1" ]; then
+			ssh $USER@$ip
+		else
+			ssh $1@$ip
+		fi
+	else
+		echo "VirtualBox is not installed."
+	fi
 }
 
 grep-ip() {
@@ -210,9 +204,13 @@ grep-ip() {
 }
 
 lan-scan() {
-  host="$(ip addr | grep -v 'host lo' | grep -E 'inet\s' | grep-ip | head -n 1)"
-  nwork=$(ipcalc $host | grep Network | grep-ip)
-  echo "$(nmap -sP $nwork/24 | grep 'Nmap scan report' | fzf | grep-ip)"
+	if command -v nmap >/dev/null 2>&1 && command -v ipcalc >/dev/null 2>&1; then
+		host="$(ip addr | grep -v 'host lo' | grep -E 'inet\s' | grep-ip | head -n 1)"
+		nwork=$(ipcalc $host | grep Network | grep-ip)
+		echo "$(nmap -sP $nwork/24 | grep 'Nmap scan report' | fzf | grep-ip)"
+	else
+		echo "nmap and/or ipcalc are not installed."
+	fi
 }
 
 lan-connect() {
@@ -224,15 +222,27 @@ lan-connect() {
 }
 
 tlist() {
-  tmuxinator list | tail -n 1 | awk -v OFS="\n" '$1=$1' | fzf
+	if command -v tmuxinator >/dev/null 2>&1; then
+		tmuxinator list | tail -n 1 | awk -v OFS="\n" '$1=$1' | fzf
+	else
+		echo "tmuxinator is not installed."
+	fi
 }
 
 tstart() {
-  tmuxinator start "$(tlist)"
+	if command -v tmuxinator >/dev/null 2>&1; then
+		tmuxinator start "$(tlist)"
+	else
+		echo "tmuxinator is not installed."
+	fi
 }
 
 tstop() {
-  tmuxinator stop "$(tlist)"
+	if command -v tmuxinator >/dev/null 2>&1; then
+		tmuxinator stop "$(tlist)"
+	else
+		echo "tmuxinator is not installed."
+	fi
 }
 # Domain Resolution
 
@@ -251,8 +261,6 @@ function DomainResolve() {
   fi
 }
 
-
-
 function historygram() {
   history | \
     awk '{print $2}' | \
@@ -261,10 +269,6 @@ function historygram() {
     sort -rn | \
     head -20 | \
     awk '!max{max=$1;}{r="";i=s=60*$1/max;while(i-->0)r=r"#";printf "%15s %5d %s %s",$2,$1,r,"\n";}'
-}
-# Script quick launcher.
-function lscript() {
-    bash $HOME/.config/zsh/scripts/launch_script.zsh
 }
 
 # Usage: palette
@@ -307,7 +311,6 @@ fif() {
 # Enable math functions
 zmodload zsh/mathfunc
 
-#{{{ Useful functions
 # prevent man from displaying lines wider than 120 characters
 function man(){
     MANWIDTH=120
@@ -367,11 +370,10 @@ function cdt() {
 }
 
 # show newest files
-# http://www.commandlinefu.com/commands/view/9015/find-the-most-recently-changed-files-recursively
 newest (){
-  sudo find . -type f -printf '%TY-%Tm-%Td %TT %p\n' | \
-  sudo grep -v cache | \
-  sudo grep -v '.hg' | grep -v '.git' | \
+  find . -type f -printf '%TY-%Tm-%Td %TT %p\n' | \
+  grep -v cache | \
+  grep -v '.hg' | grep -v '.git' | \
   sort -r | \
   less
 }
@@ -407,7 +409,6 @@ function printHookFunctions () {
 }
 
 # reloads all functions
-# http://www.zsh.org/mla/users/2002/msg00232.html
 r() {
     local f
     f=(~/.config/zsh/functions.d/*(.))
@@ -417,18 +418,11 @@ r() {
 
 
 # Rename files in a directory in an edited list fashion
-# http://www.commandlinefu.com/commands/view/7818/
 function massmove () {
-    ls > ls; paste ls ls > ren; vi ren; sed 's/^/mv /' ren|bash; rm ren ls
-}
-
-
-function z () {
-  cd ~/"$1"
+    ls > ls; paste ls ls > ren; $EDITOR ren; sed 's/^/mv /' ren|bash; rm ren ls
 }
 
 # Put a console clock in top right corner
-# http://www.commandlinefu.com/commands/view/7916/
 function clock () {
     while sleep 1;
     do
@@ -440,7 +434,11 @@ function clock () {
 }
 
 function apt-import-key () {
-    gpg --keyserver subkeys.pgp.net --recv-keys $1 | gpg --armor --export $1 | sudo apt-key add -
+	if [[ "$(uname)" == "Linux" ]]; then
+		gpg --keyserver subkeys.pgp.net --recv-keys $1 | gpg --armor --export $1 | sudo apt-key add -
+	else
+		echo "This function is only available on Debian-based systems."
+	fi
 }
 
 # create a new script, automatically populating the shebang line, editing the
@@ -500,7 +498,6 @@ cheat() {
 }
 
 # a rough equivalent to "hg out"
-# http://www.doof.me.uk/2011/01/08/list-outgoing-changesets-in-git/
 git-out() {
     for i in $(git push -n $* 2>&1 | awk '$1 ~ /[a-f0-9]+\.\.[a-f0-9]+/ { print $1; }')
     do
@@ -509,7 +506,6 @@ git-out() {
 }
 
   # kill pid that listens on given port
-# e.g. kport 3000
 kport() {
   local port=$1
   local pid=$(lsof -t -i :$port)
@@ -521,13 +517,11 @@ kport() {
   fi
 }
 # Query Wikipedia via console over DNS
-# http://www.commandlinefu.com/commands/view/2829
 wp() {
     dig +short txt ${1}.wp.dg.cx
 }
 
-# translate via google language tools (more lightweight than leo)
-# http://www.commandlinefu.com/commands/view/5034/
+# translate via google language tools
 translate() {
     wget -qO- "http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q=$1&langpair=$2|${3:-en}" | sed 's/.*"translatedText":"\([^"]*\)".*}/\1\n/'
 }
@@ -540,18 +534,6 @@ globalias() {
    zle self-insert
 }
 
-# Run script from the zsh scripts folder
-function runscript() {
-    /home/rival/.config/zsh/scripts/$1
-}
-
-reload() {
-  local f
-  f=(/usr/local/share/zsh/site-functions/*(.))
-  unfunction $f:t 2> /dev/null
-  autoload -U $f:t
-}
-
 zle -N globalias
 
 bindkey " " globalias
@@ -559,7 +541,6 @@ bindkey "^ " magic-space           # control-space to bypass completion
 bindkey -M isearch " " magic-space # normal space during searches
 
 # delete-to-previous-slash
-# http://www.zsh.org/mla/users/2005/msg01314.html
 backward-delete-to-slash () {
   local WORDCHARS=${WORDCHARS//\//}
   zle .backward-delete-word
@@ -568,10 +549,6 @@ zle -N backward-delete-to-slash
 # bind to control Y
 bindkey "^Y" backward-delete-to-slash
 
-# Lots of command examples (especially heroku) lead command docs with '$' which
-# make it kind of annoying to copy/paste, especially when there's multiple
-# commands to copy.
-#
 # This hacks around the problem by making a '$' command that simply runs
 # whatever arguments are passed to it. So you can copy
 #   '$ echo hello world'
@@ -600,11 +577,6 @@ function pipdeptree() {
 function pipdeptree-vim() {   # e.g. pipdeptree -p <package>
   python -m pipdeptree "$@" | vim - +"set ft=config foldmethod=indent" +"norm zR"
 }
-
-# }}}
-
-# FZF magics ======================================= {{{
-
 
 ## Docker Functions
 
@@ -681,4 +653,3 @@ function plugin-compile {
     zrecompile -pq "$f"
   done
 }
-# }}}

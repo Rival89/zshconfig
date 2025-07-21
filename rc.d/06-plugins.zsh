@@ -27,41 +27,6 @@ zstyle ':autocomplete:*' widget-style menu-select
    zstyle ':autocomplete:*' async yes
 
 
-# ZPlug Plugins
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-zplug "ptavares/zsh-direnv"
-zplug "b4b4r07/enhancd"
-zplug "molovo/revolver", \
-  as:command, \
-  use:revolver
-zplug "lukechilds/zsh-better-npm-completion", defer:2
-zplug "lib/completion", from:oh-my-zsh, as:plugin
-zplug "plugins/colorize", from:oh-my-zsh, as:plugin
-zplug "plugins/gh", from:oh-my-zsh, as:plugin
-zplug "plugins/pipenv", from:oh-my-zsh, as:plugin
-zplug "plugins/git-extras", from:oh-my-zsh, if:"which git"
-zplug "plugins/gnu-utils", from:oh-my-zsh
-zplug 'plugins/zsh-256color', from:oh-my-zsh
-zplug "plugins/bgnotify", from:oh-my-zsh, as:plugin
-zplug "changyuheng/fz", defer:1
-zplug "rupa/z", use:z.sh
-zplug "darvid/zsh-poetry"
-zplug "hlissner/zsh-autopair", defer:2
-zplug "z-shell/zsh-lsd"
-#zplug "agkozak/agkozak-zsh-prompt"
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-## Then, source plugins and add commands to $PATH
-zplug load 
-
-
 #ZSH Unplugged
 # make list of the Zsh plugins you use
 repos=(
@@ -110,9 +75,9 @@ plugin-load $repos
 
 
 eval "$(fasd --init auto)"
-source <(cod init $$ zsh)
-source $ZSH_CONFIG/scripts/chatgpt.zsh
-### Dotfile Manager 
-### Init Dotfiles + FZF
-#source $ZSH_CONFIG/plugins/dotbare/dotbare.plugin.zsh
-
+if command -v cod > /dev/null; then
+    source <(cod init $$ zsh)
+fi
+if [[ -f "$ZSH_CONFIG/scripts/chatgpt.zsh" ]]; then
+    source $ZSH_CONFIG/scripts/chatgpt.zsh
+fi

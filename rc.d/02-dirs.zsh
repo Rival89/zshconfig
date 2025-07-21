@@ -42,8 +42,9 @@ fpath=($fpath ~/.config/zsh/functions)
 
 
 # Use hard limits, except for a smaller stack and no core dumps
-unlimit
-limit stack 8192
-limit core 0
-limit -s
-
+if command -v unlimit >/dev/null 2>&1; then
+    unlimit
+    limit stack 8192
+    limit core 0
+    limit -s
+fi

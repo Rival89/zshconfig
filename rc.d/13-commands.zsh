@@ -12,63 +12,51 @@ alias short="$ZSH_CONFIG/scripts/short.sh"
 alias movies="$ZSH_CONFIG/scripts/movies.sh"
 
 function cna() {
-    # Get a list of all network adapters
-     adapters=$(ip link show | awk -F: '$0 !~ "lo|vir|docker|tap|br|eth|^[^0-9]"{print $2;getline}')
+    if [[ "$(uname)" == "Linux" ]]; then
+        # Get a list of all network adapters
+         adapters=$(ip link show | awk -F: '$0 !~ "lo|vir|docker|tap|br|eth|^[^0-9]"{print $2;getline}')
 
 
-    # Check if there are any network adapters
-    if [[ -z "$adapters" ]]; then
-        echo "No network adapters found."
-        return 1
-    fi
+        # Check if there are any network adapters
+        if [[ -z "$adapters" ]]; then
+            echo "No network adapters found."
+            return 1
+        fi
 
-    # Use gum to let the user choose an adapter
-    chosen_adapter=$(echo "$adapters" | gum choose)
+        # Use gum to let the user choose an adapter
+        chosen_adapter=$(echo "$adapters" | gum choose)
 
-     # Removing leading whitespace from selected_adapter
-     chosen_adapter=$(echo "$chosen_adapter" | sed -e 's/^[[:space:]]*//')
-     
-    # Check if the user chose an adapter
-    if [[ -z "$chosen_adapter" ]]; then
-        echo "No adapter chosen."
-        return 1
-    fi
+         # Removing leading whitespace from selected_adapter
+         chosen_adapter=$(echo "$chosen_adapter" | sed -e 's/^[[:space:]]*//')
 
-    # Use gum to let the user choose a mode
-    chosen_mode=$(echo -e "Monitor\nManaged" | gum choose)
+        # Check if the user chose an adapter
+        if [[ -z "$chosen_adapter" ]]; then
+            echo "No adapter chosen."
+            return 1
+        fi
 
-    # Check if the user chose a mode
-    if [[ -z "$chosen_mode" ]]; then
-        echo "No mode chosen."
-        return 1
-    fi
+        # Use gum to let the user choose a mode
+        chosen_mode=$(echo -e "Monitor\nManaged" | gum choose)
 
-    # Switch the chosen adapter to the chosen mode
-    if [[ "$chosen_mode" == "Monitor" ]]; then
-        sudo ip link set "$chosen_adapter" down
-        sudo iw "$chosen_adapter" set monitor control
-        sudo ip link set "$chosen_adapter" up
+        # Check if the user chose a mode
+        if [[ -z "$chosen_mode" ]]; then
+            echo "No mode chosen."
+            return 1
+        fi
+
+        # Switch the chosen adapter to the chosen mode
+        if [[ "$chosen_mode" == "Monitor" ]]; then
+            sudo ip link set "$chosen_adapter" down
+            sudo iw "$chosen_adapter" set monitor control
+            sudo ip link set "$chosen_adapter" up
+        else
+            sudo ip link set "$chosen_adapter" down
+            sudo iw "$chosen_adapter" set type managed
+            sudo ip link set "$chosen_adapter" up
+        fi
     else
-        sudo ip link set "$chosen_adapter" down
-        sudo iw "$chosen_adapter" set type managed
-        sudo ip link set "$chosen_adapter" up
+        echo "This function is only available on Linux."
     fi
-}
-
-# Shell Tings
-
-tsa(){
-	tmux ls -F \#S > /dev/null 2>&1
-	if [ $? -eq 0 ]
-	then
-		SESSION=$(tmux ls -F \#S | gum filter --placeholder "Attach to a TMUX session...")
-
-		if [ ! -z "$SESSION" ]; then
-			tmux attach -t "$SESSION"
-		fi
-	else
-		echo "There is no existing TMUX session."
-	fi
 }
 
 # File and Directory Tings
@@ -156,7 +144,12 @@ alias zln='zmv -Lv'
 : ${PAGER:=less}
 
 # Print most recently modified files in current directory. It takes no arguments
-alias mostrecent="find ${1} -type f | xargs stat --format '%Y :%y: %n' 2>/dev/null | sort -nr | cut -d: -f2,3,5 | head"
+if [[ "$(uname)" == "Darwin" ]]; then
+    alias mostrecent="find ${1} -type f -print0 | xargs -0 stat -f '%m %N' | sort -rn | head | cut -d' ' -f2-"
+else
+    alias mostrecent="find ${1} -type f | xargs stat --format '%Y :%y: %n' 2>/dev/null | sort -nr | cut -d: -f2,3,5 | head"
+fi
+
 
 findit() {
     # https://unix.stackexchange.com/questions/42841/how-to-skip-permission-denied-errors-when-running-find-in-linux
@@ -186,16 +179,20 @@ dirsize () {
 }
 
 share() {
-  # `share ss`: Shares latest screenshots/image in the clipboard
-  if [[ $1 = "ss" ]]; then 
-      img_path=/tmp/$(date +"%d_%m_%y-%H_%M_%m").png
-      xclip -selection clipboard -t image/png -o >$img_path
-      kdeconnect-cli -n sam --share $img_path
+    if [[ "$(uname)" == "Linux" ]]; then
+      # `share ss`: Shares latest screenshots/image in the clipboard
+      if [[ $1 = "ss" ]]; then
+          img_path=/tmp/$(date +"%d_%m_%y-%H_%M_%m").png
+          xclip -selection clipboard -t image/png -o >$img_path
+          kdeconnect-cli -n sam --share $img_path
 
-  # `share /some/path/file.ext`: Shares files
-  else
-      kdeconnect-cli -n sam --share $1
-  fi
+      # `share /some/path/file.ext`: Shares files
+      else
+          kdeconnect-cli -n sam --share $1
+      fi
+    else
+        echo "This function is only available on Linux."
+    fi
 }
 
 dmv() {
