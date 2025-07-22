@@ -1,0 +1,46 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Change the command timeout from 500 to 1000 ms
+command_timeout = 1000
+
+[directory]
+style = "blue"
+truncate_to_repo = false
+
+[git_branch]
+style = "bold green"
+
+[git_status]
+style = "bold red"
+stashed = "📦"
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+untracked = "🤷"
+staged = '[++\($count\)]'
+modified = '[! \($count\)]'
+renamed = '[» \($count\)]'
+deleted = '[-- \($count\)]'
+
+[gcloud]
+format = "on [$symbol$account@$project]($style) "
+
+[hostname]
+ssh_only = true
+ssh_symbol = "🌐"
+style = "bold dimmed white"
+disabled = false
+
+[jobs]
+symbol = "✦"
+style = "bold red"
+number_threshold = 2
+
+[python]
+pyenv_version_name = true
+
+[time]
+disabled = false
+style = "bold dimmed white"
+format = "at $time"

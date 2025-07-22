@@ -18,6 +18,10 @@ PROCESS_USER=`echo "$PROCESS"| grep -v root | awk {'print $2'} | awk '{ SUM += $
 # get processors
 PROCESSOR_NAME=`grep "model name" /proc/cpuinfo | cut -d ' ' -f3- | awk {'print $0'} | head -1`
 PROCESSOR_COUNT=`grep -ioP 'processor\t:' /proc/cpuinfo | wc -l`
+# get cpu usage
+CPU_USAGE=`top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}'`
+# get disk usage
+DISK_USAGE=`df -h / | awk 'NR==2{print $5}'`
 
 W="\e[0;39m"
 G="\e[1;32m"
@@ -29,13 +33,16 @@ echo -e "
 ${W}system info:
 $W  Distro......: $Y`cat /etc/*release | grep "PRETTY_NAME" | cut -d "=" -f 2- | sed 's/"//g'`
 $W  Kernel......: $W`uname -sr`
+$W  User........: $W`whoami`
 
 $W  Uptime......: $W`uptime -p`
 $W  Load........: $G$LOAD1$W (1m), $G$LOAD5$W (5m), $G$LOAD15$W (15m)
 $W  Processes...:$W $G$PROCESS_ROOT$W (root), $G$PROCESS_USER$W (user), $G$PROCESS_ALL$W (total)
 
 $W  CPU.........: $W$PROCESSOR_NAME ($G$PROCESSOR_COUNT$W vCPU)
+$W  CPU Usage...: $G$CPU_USAGE
 $W  Memory......: $G$USED$W used, $G$AVAIL$W avail, $G$TOTAL$W total$W
+$W  Disk Usage..: $G$DISK_USAGE
 
 $W  Local IP....: $W`hostname -I`
 $W  External IP.: $W$ipext

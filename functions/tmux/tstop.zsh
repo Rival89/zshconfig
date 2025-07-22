@@ -1,0 +1,3 @@
+tstop() {
+  tmuxinator stop "$(tlist)"
+}

@@ -3,7 +3,7 @@
 # Function to display help message
 function display_help {
     echo "Usage: ./launch_script.sh"
-    echo "List all .sh files in ~/.config/zsh/scripts/ and allow the user to select one to launch."
+    echo "List all executable files in ~/.config/zsh/scripts/ and allow the user to select one to launch."
     echo ""
     echo "Options:"
     echo "  --help        Display this help message"
@@ -31,8 +31,8 @@ function main {
         esac
     done
 
-    # Get list of .sh files
-    scripts=$(find "$script_dir" -name "*.sh")
+    # Get list of executable files
+    scripts=$(find "$script_dir" -type f -executable)
 
     # Get just the filenames
     script_names=$(echo "$scripts" | xargs -n 1 basename)

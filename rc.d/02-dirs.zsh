@@ -33,7 +33,7 @@ setopt cdablevars               # blah=~/media/movies; cd blah; pwd => ~/media/m
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-# Search path for the cd command
+# A list of directories to search for when using `cd`.
 cdpath=(.. ~ ~/src ~/.config/zsh ~/Git)
 
 
@@ -42,9 +42,7 @@ fpath=($fpath ~/.config/zsh/functions)
 
 
 # Use hard limits, except for a smaller stack and no core dumps
-if command -v unlimit >/dev/null 2>&1; then
-    unlimit
-    limit stack 8192
-    limit core 0
-    limit -s
-fi
+unlimit
+limit stack 8192
+limit core 0
+limit -s

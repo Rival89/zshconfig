@@ -13,6 +13,8 @@
 unsetopt FLOW_CONTROL
 
 # Alt-H: Get help on your current command.
+# This is a wrapper around the `run-help` command that automatically
+# loads the necessary helper functions.
 () {
   unalias $1 2> /dev/null   # Remove the default.
 
@@ -46,3 +48,12 @@ bindkey '^[v' describe-key-briefly
     LBUFFER="sudo $LBUFFER"   # Use $LBUFFER to preserve cursor position.
   }
 } .sudo
+
+# Ctrl-R: Fuzzy search through command history.
+bindkey '^R' fzf-history-widget
+
+# Alt-C: Fuzzy search through directories and cd into the selected one.
+bindkey '^[c' fzf-cd-widget
+
+# Ctrl-T: Fuzzy search through files and paste the selected one into the command line.
+bindkey '^T' fzf-file-widget

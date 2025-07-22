@@ -1,17 +1,8 @@
 # VI MODE
 export ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 
-# ZSH Autosuggestions
-case $TERM in
-    xterm*|rxvt*)
-        ZSH_AUTOSUGGESTION_HIGHLIGHT_COLOR="fg=8"
-        ;;
-    *)
-        ZSH_AUTOSUGGESTION_HIGHLIGHT_COLOR="fg=3"
-        ;;
-esac
-
 # FZF
+# Colors for fzf-tab groups.
 export FZF_TAB_GROUP_COLORS=(
     $'\033[94m' $'\033[32m' $'\033[33m' $'\033[35m' $'\033[31m' $'\033[38;5;27m' $'\033[36m' \
     $'\033[38;5;100m' $'\033[38;5;98m' $'\033[91m' $'\033[38;5;80m' $'\033[92m' \

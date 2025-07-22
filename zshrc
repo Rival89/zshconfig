@@ -2,27 +2,29 @@
 #
 # This file, .zshrc, is sourced by zsh for each interactive shell session.
 #
+# Note: For historical reasons, there are other dotfiles, besides .zshenv and
+# .zshrc, that zsh reads, but there is really no need to use those.
 
-# Enable profiling, if ZSH_PROFILE_RC is set.
+# }}}
+# {{{ Profiling
+
 [[ -n "$ZSH_PROFILE_RC" ]] && which zmodload >&/dev/null && zmodload zsh/zprof
 
-# Measure boot time.
-if command -v gdate >/dev/null 2>&1; then
-  bootTimeStart=$(gdate +%s%N)
-else
-  bootTimeStart=$(date +%s%N)
-fi
+ #take tike to measure boot time
+bootTimeStart=$(gdate +%s%N 2>/dev/null || date +%s%N)
 
-# Compile zsh scripts.
+
+# Compile multiple zsh script files to .zwc files.
 function zcompile-many() {
   local f
   for f; do zcompile -R -- "$f".zwc "$f"; done
 }
 
-# Set watch users.
+# Users to ignore for `watch` command.
 watch=(notme root)
 
-# Source all .zsh files in rc.d.
+
+## Introduce environment & prompt files
 () {
   local gitdir=~/.config/zsh/plugins  # Where to keep repos and plugins
   local file=
@@ -31,71 +33,77 @@ watch=(notme root)
   done
 } "$@"
 
-# Add functions.d to fpath.
+# add an autoload function path, if directory exists
+# http://www.zsh.org/mla/users/2002/msg00232.html
 functionsd="$ZSH_CONFIG/functions.d"
 if [[ -d "$functionsd" ]] {
     fpath=( $functionsd $fpath )
     autoload -U $functionsd/*(:t)
 }
 
-# Autoload all functions in fpath.
 for func in $^fpath/*(N-.x:t); autoload -Uz $func
 
-# Set REPORTTIME to 5 seconds.
+# Show time/memory for commands running longer than this number of seconds:
 REPORTTIME=5
 
-# Configure `time` format.
+# configure `time` format
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
 
-# Autoload zsh modules.
+# We want zmv and other nice features (man zshcontrib)
 autoload -Uz colors zargs zcalc zed zmv
 
-# Enable color support of ls.
-if [[ "$(uname)" == "Linux" ]]; then
+# enable color support of ls, less and man, and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     export LS_COLORS="$LS_COLORS:ow=30;44:" # fix ls color for folders with 777 permissions
+
+    # enable command-not-found if installed
+if [ -f /etc/zsh_command_not_found ]; then
+    . /etc/zsh_command_not_found
+fi
 fi
 
-# Set editor.
-export EDITOR="nano"
 
-# Set LS_COLORS using vivid.
+export EDITOR="nano"
 export LS_COLORS="$(vivid generate dracula)"
 
-# Auto-quote entered URLs.
+# Auto-quote URLs pasted into the command line.
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 
-# Edit command line in $EDITOR.
+# Edit the current command line in $EDITOR.
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey "\ee" edit-command-line  # <Esc-e>
 
-# Do not add a newline before the prompt.
+ # Do not add a newline before the prompt.
 unsetopt PROMPT_SP
 
-# Print stderr with red.
-if [[ "$(uname)" == "Linux" ]]; then
-    STDERRED_PATH="$HOME/Git/stderred/build/libstderred.so"
-    if [ -f $STDERRED_PATH ]; then
-        export LD_PRELOAD="${STDERRED_PATH}${LD_PRELOAD:+:$LD_PRELOAD}"
-        red_colored_text=$(tput setaf 9)
-        export STDERRED_ESC_CODE=`echo -e "$red_colored_text"`
-    else
-        echo "stderred was not found. Please install it or remove it from .zshrc."
-    fi
-    unset STDERRED_PATH
-fi
+export LD_PRELOAD="/home/rival/Git/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
 
-# Pyenv configuration.
+# Print stderr with red. For more see
+# https://github.com/sickill/stderred
+STDERRED_PATH="$HOME/Git/stderred/build/libstderred.so"
+if [ -f $STDERRED_PATH ]; then
+    export LD_PRELOAD="${STDERRED_PATH}${LD_PRELOAD:+:$LD_PRELOAD}"
+    red_colored_text=$(tput setaf 9)
+    export STDERRED_ESC_CODE=`echo -e "$red_colored_text"`
+else
+    echo "stderred was not found. Please install it or remove it from .zshrc."
+fi
+unset STDERRED_PATH
+
 PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - )"
 
-# Calculate and print boot time.
-if command -v gdate >/dev/null 2>&1; then
-    bootTimeEnd=$(gdate +%s%N)
-else
-    bootTimeEnd=$(date +%s%N)
-fi
+#bindkey -r "^I"
+#bindkey "^I" expand-or-complete
+#bindkey "^ " fzf-completion
+
+bootTimeEnd=$(gdate +%s%N 2>/dev/null || date +%s%N)
 bootTimeDuration=$((($bootTimeEnd - $bootTimeStart)/1000000))
-echo "Boot time: $bootTimeDuration ms"
+echo $bootTimeDuration ms overall boot duration
+
+export PATH="$HOME/.basher/bin:$PATH"   ##basher5ea843
+eval "$(basher init - zsh)"             ##basher5ea843

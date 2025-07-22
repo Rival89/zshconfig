@@ -11,53 +11,52 @@ alias transfer="$ZSH_CONFIG/scripts/transfer.sh"
 alias short="$ZSH_CONFIG/scripts/short.sh"
 alias movies="$ZSH_CONFIG/scripts/movies.sh"
 
+# Change network adapter mode.
 function cna() {
-    if [[ "$(uname)" == "Linux" ]]; then
-        # Get a list of all network adapters
-         adapters=$(ip link show | awk -F: '$0 !~ "lo|vir|docker|tap|br|eth|^[^0-9]"{print $2;getline}')
+    # Get a list of all network adapters
+     adapters=$(ip link show | awk -F: '$0 !~ "lo|vir|docker|tap|br|eth|^[^0-9]"{print $2;getline}')
 
 
-        # Check if there are any network adapters
-        if [[ -z "$adapters" ]]; then
-            echo "No network adapters found."
-            return 1
-        fi
+    # Check if there are any network adapters
+    if [[ -z "$adapters" ]]; then
+        echo "No network adapters found."
+        return 1
+    fi
 
-        # Use gum to let the user choose an adapter
-        chosen_adapter=$(echo "$adapters" | gum choose)
+    # Use gum to let the user choose an adapter
+    chosen_adapter=$(echo "$adapters" | gum choose)
 
-         # Removing leading whitespace from selected_adapter
-         chosen_adapter=$(echo "$chosen_adapter" | sed -e 's/^[[:space:]]*//')
+     # Removing leading whitespace from selected_adapter
+     chosen_adapter=$(echo "$chosen_adapter" | sed -e 's/^[[:space:]]*//')
 
-        # Check if the user chose an adapter
-        if [[ -z "$chosen_adapter" ]]; then
-            echo "No adapter chosen."
-            return 1
-        fi
+    # Check if the user chose an adapter
+    if [[ -z "$chosen_adapter" ]]; then
+        echo "No adapter chosen."
+        return 1
+    fi
 
-        # Use gum to let the user choose a mode
-        chosen_mode=$(echo -e "Monitor\nManaged" | gum choose)
+    # Use gum to let the user choose a mode
+    chosen_mode=$(echo -e "Monitor\nManaged" | gum choose)
 
-        # Check if the user chose a mode
-        if [[ -z "$chosen_mode" ]]; then
-            echo "No mode chosen."
-            return 1
-        fi
+    # Check if the user chose a mode
+    if [[ -z "$chosen_mode" ]]; then
+        echo "No mode chosen."
+        return 1
+    fi
 
-        # Switch the chosen adapter to the chosen mode
-        if [[ "$chosen_mode" == "Monitor" ]]; then
-            sudo ip link set "$chosen_adapter" down
-            sudo iw "$chosen_adapter" set monitor control
-            sudo ip link set "$chosen_adapter" up
-        else
-            sudo ip link set "$chosen_adapter" down
-            sudo iw "$chosen_adapter" set type managed
-            sudo ip link set "$chosen_adapter" up
-        fi
+    # Switch the chosen adapter to the chosen mode
+    if [[ "$chosen_mode" == "Monitor" ]]; then
+        sudo ip link set "$chosen_adapter" down
+        sudo iw "$chosen_adapter" set monitor control
+        sudo ip link set "$chosen_adapter" up
     else
-        echo "This function is only available on Linux."
+        sudo ip link set "$chosen_adapter" down
+        sudo iw "$chosen_adapter" set type managed
+        sudo ip link set "$chosen_adapter" up
     fi
 }
+
+# Shell Tings
 
 # File and Directory Tings
 
@@ -92,36 +91,6 @@ bindkey '^X^X' fzf-history-widget
 
 alias theweather="curl wttr.in/Tucson"
 
-zshaddhistory() {
-    local line=${1%%$'\n'}
-    local cmd=${line%% *}
-    # Only those that satisfy all of the following conditions are added to the history
-    [[ ${#line} -ge 5
-       && ${cmd} != ll
-       && ${cmd} != ls
-       && ${cmd} != la
-       && ${cmd} != cd
-       && ${cmd} != man
-       && ${cmd} != scp
-       && ${cmd} != vim
-       && ${cmd} != nvim
-       && ${cmd} != less
-       && ${cmd} != ping
-       && ${cmd} != open
-       && ${cmd} != file
-       && ${cmd} != which
-       && ${cmd} != whois
-       && ${cmd} != drill
-       && ${cmd} != uname
-       && ${cmd} != md5sum
-       && ${cmd} != pacman
-       && ${cmd} != xdg-open
-       && ${cmd} != traceroute
-       && ${cmd} != speedtest-cli
-    ]]
-}
-zshaddhistory
-
 # These aliases enable us to paste example code into the terminal without the
 # shell complaining about the pasted prompt symbol.
 alias %= \$=
@@ -144,12 +113,7 @@ alias zln='zmv -Lv'
 : ${PAGER:=less}
 
 # Print most recently modified files in current directory. It takes no arguments
-if [[ "$(uname)" == "Darwin" ]]; then
-    alias mostrecent="find ${1} -type f -print0 | xargs -0 stat -f '%m %N' | sort -rn | head | cut -d' ' -f2-"
-else
-    alias mostrecent="find ${1} -type f | xargs stat --format '%Y :%y: %n' 2>/dev/null | sort -nr | cut -d: -f2,3,5 | head"
-fi
-
+alias mostrecent="find ${1} -type f | xargs stat --format '%Y :%y: %n' 2>/dev/null | sort -nr | cut -d: -f2,3,5 | head"
 
 findit() {
     # https://unix.stackexchange.com/questions/42841/how-to-skip-permission-denied-errors-when-running-find-in-linux
@@ -179,20 +143,16 @@ dirsize () {
 }
 
 share() {
-    if [[ "$(uname)" == "Linux" ]]; then
-      # `share ss`: Shares latest screenshots/image in the clipboard
-      if [[ $1 = "ss" ]]; then
-          img_path=/tmp/$(date +"%d_%m_%y-%H_%M_%m").png
-          xclip -selection clipboard -t image/png -o >$img_path
-          kdeconnect-cli -n sam --share $img_path
+  # `share ss`: Shares latest screenshots/image in the clipboard
+  if [[ $1 = "ss" ]]; then
+      img_path=/tmp/$(date +"%d_%m_%y-%H_%M_%m").png
+      xclip -selection clipboard -t image/png -o >$img_path
+      kdeconnect-cli -n sam --share $img_path
 
-      # `share /some/path/file.ext`: Shares files
-      else
-          kdeconnect-cli -n sam --share $1
-      fi
-    else
-        echo "This function is only available on Linux."
-    fi
+  # `share /some/path/file.ext`: Shares files
+  else
+      kdeconnect-cli -n sam --share $1
+  fi
 }
 
 dmv() {

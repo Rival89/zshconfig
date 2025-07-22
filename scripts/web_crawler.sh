@@ -12,13 +12,71 @@ function display_help {
     echo "  ./web_crawler.sh"
 }
 
+# Function to run feroxbuster
+function run_feroxbuster {
+    local protocol=$1
+    local target=$2
+    local wordlist=$3
+    local extensions=$4
+    echo "Running feroxbuster on $protocol://$target"
+    if [ -n "$extensions" ]; then
+        gum spin --title "Running feroxbuster..." -- sh -c "feroxbuster -u "$protocol://$target" -w "$wordlist" -x "$extensions" -o "feroxbuster_$target.txt""
+    else
+        feroxbuster -u "$protocol://$target" -w "$wordlist" -o "feroxbuster_$target.txt"
+    fi
+}
+
+# Function to run nmap
+function run_nmap {
+    local target=$1
+    echo "Running nmap on $target"
+    gum spin --title "Running nmap..." -- sh -c "nmap -v -A $target -oN "nmap_$target.txt""
+}
+
+# Function to run whois
+function run_whois {
+    local target=$1
+    echo "Running whois on $target"
+    gum spin --title "Running whois..." -- sh -c "whois $target > "whois_$target.txt""
+}
+
+# Function to run dnsenum
+function run_dnsenum {
+    local target=$1
+    echo "Running dnsenum on $target"
+    gum spin --title "Running dnsenum..." -- sh -c "dnsenum $target > "dnsenum_$target.txt""
+}
+
+# Function to run theHarvester
+function run_theHarvester {
+    local target=$1
+    echo "Running theHarvester on $target"
+    gum spin --title "Running theHarvester..." -- sh -c "theHarvester -d $target -b all > "theHarvester_$target.txt""
+}
+
+# Function to run dirb
+function run_dirb {
+    local protocol=$1
+    local target=$2
+    local wordlist=$3
+    echo "Running dirb on $protocol://$target"
+    gum spin --title "Running dirb..." -- sh -c "dirb "$protocol://$target" "$wordlist" -o "dirb_$target.txt""
+}
+
+# Function to run nikto
+function run_nikto {
+    local protocol=$1
+    local target=$2
+    echo "Running nikto on $protocol://$target"
+    gum spin --title "Running nikto..." -- sh -c "nikto -h "$protocol://$target" -o "nikto_$target.txt""
+}
+
 # Main function
 function main {
     local protocol_options=("http" "https")
     local wordlist_dir="/home/rival/wordlists"
     local extension_options=("sql" "zip" "xml" "backup" "passwd" "conf" "log" "yaml" "txt" "php" "pdf" "js" "html" "json" "docx" "additional?")
     local tool_options=("feroxbuster" "nmap" "whois" "dnsenum" "theHarvester" "dirb" "nikto")
-    local save=""
     
     # Parse command-line options
     while (( $# )); do
@@ -71,78 +129,46 @@ function main {
         local extensions_str=$(echo "$extensions" | tr '\n' ',')
     fi
 
-    # Run feroxbuster
-    if echo "$tools" | grep -q "feroxbuster"; then
-        echo "Running feroxbuster on $protocol://$target"
-        if [ -n "$extensions_str" ]; then
-            gum spin --title "Running feroxbuster..." -- sh -c "feroxbuster -u "$protocol://$target" -w "$wordlist" -x "$extensions_str" -o "feroxbuster_$target.txt""
-        else
-            feroxbuster -u "$protocol://$target" -w "$wordlist" -o "feroxbuster_$target.txt"
-        fi
-    fi
+    for tool in $tools; do
+        case $tool in
+            feroxbuster)
+                run_feroxbuster "$protocol" "$target" "$wordlist" "$extensions_str"
+                ;;
+            nmap)
+                run_nmap "$target"
+                ;;
+            whois)
+                run_whois "$target"
+                ;;
+            dnsenum)
+                run_dnsenum "$target"
+                ;;
+            theHarvester)
+                run_theHarvester "$target"
+                ;;
+            dirb)
+                run_dirb "$protocol" "$target" "$wordlist"
+                ;;
+            nikto)
+                run_nikto "$protocol" "$target"
+                ;;
+        esac
+    done
 
-    # Run nmap
-    if echo "$tools" | grep -q "nmap"; then
-        echo "Running nmap on $target"
-        gum spin --title "Running nmap..." -- sh -c "nmap -v -A $target -oN "nmap_$target.txt""
-    fi
-
-    # Run whois
-    if echo "$tools" | grep -q "whois"; then
-        echo "Running whois on $target"
-        gum spin --title "Running whois..." -- sh -c "whois $target > "whois_$target.txt""
-    fi
-
-    # Run dnsenum
-    if echo "$tools" | grep -q "dnsenum"; then
-        echo "Running dnsenum on $target"
-        gum spin --title "Running dnsenum..." -- sh -c "dnsenum $target > "dnsenum_$target.txt""
-    fi
-
-    # Run theHarvester
-    if echo "$tools" | grep -q "theHarvester"; then
-        echo "Running theHarvester on $target"
-        gum spin --title "Running theHarvester..." -- sh -c "theHarvester -d $target -b all > "theHarvester_$target.txt""
-    fi
-
-    # Run dirb
-    if echo "$tools" | grep -q "dirb"; then
-        echo "Running dirb on $protocol://$target"
-        gum spin --title "Running dirb..." -- sh -c "dirb "$protocol://$target" "$wordlist" -o "dirb_$target.txt""
-    fi
-
-    # Run nikto
-    if echo "$tools" | grep -q "nikto"; then
-        echo "Running nikto on $protocol://$target"
-        gum spin --title "Running nikto..." -- sh -c "nikto -h "$protocol://$target" -o "nikto_$target.txt""
-    fi
-
-
-    # Display the $target
-    if [ -n "$save" ]; then
-        cp dirb_$target.txt "${save}_dirb.txt"
-        cp nmap_$target.txt "${save}_nmap.txt"
-        cp nikto_$target.txt "${save}_nikto.txt"
-        cp whois_$target.txt "${save}_whois.txt"
-        cp dnsenum_$target.txt "${save}_dnsenum.txt"
-        cp theHarvester_$target.txt "${save}_theHarvester.txt"
-    fi
-    if [ -z "$quiet" ]; then
-        echo "Ferox $target:"
-        gum pager < feroxbuster_$target.txt
-        echo "Dirb $target:"
-        gum pager < dirb_$target.txt
-        echo "Nmap $target:"
-        gum pager < nmap_$target.txt
-        echo "Nikto $target:"
-        gum pager < nikto_$target.txt
-        echo "Whois $target:"
-        gum pager < whois_$target.txt
-        echo "dnsenum $target:"
-        gum pager < dnsenum_$target.txt
-        echo "theHarvester $target:"
-        gum pager < theHarvester_$target.txt
-    fi
+    echo "Ferox $target:"
+    gum pager < "feroxbuster_$target.txt"
+    echo "Dirb $target:"
+    gum pager < "dirb_$target.txt"
+    echo "Nmap $target:"
+    gum pager < "nmap_$target.txt"
+    echo "Nikto $target:"
+    gum pager < "nikto_$target.txt"
+    echo "Whois $target:"
+    gum pager < "whois_$target.txt"
+    echo "dnsenum $target:"
+    gum pager < "dnsenum_$target.txt"
+    echo "theHarvester $target:"
+    gum pager < "theHarvester_$target.txt"
 }
 # Run the main function
 main "$@"

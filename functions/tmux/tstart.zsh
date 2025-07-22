@@ -1,0 +1,3 @@
+tstart() {
+  tmuxinator start "$(tlist)"
+}

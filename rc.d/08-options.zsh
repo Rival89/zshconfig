@@ -1,6 +1,6 @@
 #!/bin/zsh
 ## ZSH configuration
-# Treat these characters as part of a word.
+# Characters to be considered part of a word.
 WORDCHARS='_-*?[]~&.;!#$%^(){}<>'
 
 unsetopt BRACE_CCL        # Allow brace character class list expansion.

@@ -2,17 +2,26 @@
 
 alias ls='lsd'
 alias sourcezsh='source ~/.zshrc'
+alias pkm='$ZSH_CONFIG/scripts/pkm.sh'
+alias fullclock='tty-clock -csSb -C3'
+alias xcd='cd "$(xplr --print-pwd-as-result)"'
 alias lg="lazygit"
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
+alias agar='sudo apt-get autoremove -y'
 alias ip='ip --color=auto'
+alias top10='history | awk '\''{a[$2]++}END{for(i in a){print a[i] " " i}}'\'' | sort -rn | head'
+alias szfzf="sourcezsh && enable-fzf-tab"
 # Tmuxinator - Tmux Session Manager
 alias mux='tmuxinator'
 alias tmux='TERM=screen-256color-bce tmux'
+alias t="tmux"
 alias ta="tmux a"
 
+
+alias which >&/dev/null && unalias which
 alias q=exit
 alias clr=clear
 alias sudo='sudo '
@@ -30,6 +39,8 @@ alias gurl='curl --compressed'
 #AI
 alias autogpt="docker-compose run --rm auto-gpt"
 
+alias shutdown='sudo shutdown'
+alias reboot='sudo reboot'
 # force zsh to show the complete history
 alias history="history 0"
 # memory/cpu
@@ -38,13 +49,42 @@ alias free='free -mt'
 alias ps='ps auxf'
 alias ht='htop'
 alias pip3r='pip3 install -r requirements.txt'
-
-alias vmap="nmap --script=vuln"
-alias nmap="grc nmap"
+alias cputemp='sensors | grep Core'
+alias gfcd='git clone $1 && cd $1'
+alias smi='sudo make install'
+alias howmany="howmanypeoplearearound -a wlan1 -v -s '200'"
+alias ifconfig="sudo grc ifconfig"
+alias vmap="sudo nmap --script=vuln"
+alias nmap="sudo grc nmap"
+alias reverseip="sudo iptables -t nat -A PREROUTING -p tcp --dport 1:65534 -j REDIRECT --to-ports 443"
+alias 1d='sudo ifconfig wlan1 down'
+alias 1up='sudo ifconfig wlan1 up'
+alias 2d='sudo ifconfig wlan2 down'
+alias 2up='sudo ifconfig wlan2 up'
+alias 0d='sudo ifconfig wlan0 down'
+alias 0up='sudo ifconfig wlan0 up'
+alias ec0up="sudo ifconfig ech0 up"
+alias ec0d="sudo ifconfig ech0 down"
+alias chec0="ec0d; sudo macchanger -r ech0; ec0up"
+alias ch1="1d; sudo macchanger -r wlan1; 1up"
+alias ch2="2d; sudo macchanger -r wlan2; 2up"
+alias mkech0="sudo iw wlan1 interface add ech0 type monitor"
+alias mksn0w="sudo iw wlan2 interface add sn0w type monitor"
+alias 1mon="1d; sudo iwconfig wlan1 mode Monitor; 1up"
+alias 1man="1d; sudo iwconfig wlan1 mode Managed; 1up"
+alias 2mon="2d; sudo iwconfig wlan2 mode Monitor; 2up"
+alias 2man="2d; sudo iwconfig wlan2 mode Managed; 2up"
+alias killech0="sudo iw dev ech0 del"
+alias dropnet="sudo unmanage_interface -i"
 alias rmzcomp="rm -f ~/.zcompdump; compinit"
+alias neofetch="/bin/neofetch --backend ascii --source $HOME/.config/neofetch/ascii --size '180px' --colors 5 5 7 2 2 7"
+alias eq="cc"
+alias sniff1="sudo ngrep -d 'wlan1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i wlan1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 alias historysummary="history | awk '{a[\$2]++} END{for(i in a){printf \"%5d\t%s\n\",a[i],i}}'| sort -rn| head -30"
-alias iwconfig="grc iwconfig"
-alias dmesg='dmesg'
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias iwconfig="sudo grc iwconfig"
+alias dmesg='sudo dmesg'
 alias exsh="exec $SHELL"
 alias asroot='sudo $(fc -ln -1)'
 alias -g Z=" | fzf" # Can change 'Z' to whatever you like
@@ -52,29 +92,25 @@ alias showpath='echo -e "${PATH//:/\\n}"'
 alias showfpath='echo -e "${FPATH//:/\\n}"'
 alias pyenvi='eval "$(pyenv init -)"'
 alias pv3='pyenv virtualenv'
-
+alias lzy='cd /usr/bin/lscript;sudo ./l'
+alias x="zqi"
+alias trufflehog="sudo docker run --rm -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest github --repo "
+alias allnet='restart wpa_supplicant;restart networking;restart NetworkManager'
+alias vtn='echo "X[mX(BX)0OX[?5lX7X[rX8" | tr '\''XO'\'' '\''\033\017'\'''
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-alias ctl='systemctl '
-alias start="systemctl start"
-alias stop="systemctl stop"
-alias status="systemctl status"
-alias restart="systemctl restart"
-alias reboot="systemctl start reboot.target"
+alias ctl='sudo systemctl '
+alias sysdeath='sudo systemctl start poweroff.target'
+alias start=" sudo systemctl start"
+alias stop=" sudo systemctl stop"
+alias status=" sudo systemctl status"
+alias restart=" sudo systemctl restart"
 
 alias jc='journalctl -xe'
 alias sc=systemctl
 alias ssc='sudo systemctl'
-
-if (( $+commands[exa] )); then
-  alias exa="exa --group-directories-first --git";
-  alias l="exa -blF";
-  alias ll="exa -abghilmu";
-  alias llm='ll --sort=modified'
-  alias la="LC_COLLATE=C exa -ablF";
-  alias tree='exa --tree'
-fi
+alias venom='sudo docker run --rm -ti vittring/venom:yggdrasil'
 
 alias 1='cd +1'
 alias 2='cd +2'
@@ -86,10 +122,10 @@ alias 7='cd +7'
 alias 8='cd +8'
 alias 9='cd +9'
 alias bat='batcat --theme base16 -p'
-alias blkid='grc blkid'
+alias blkid='sudo grc blkid'
 alias chmod='chmod --preserve-root -v'
 alias chown='chown --preserve-root -v'
-alias curl='grc curl'
+alias curl='sudo grc curl'
 alias gfc="git clone"
 alias ll='ls -alh --color=auto'
 alias acs='apt-cache show'
@@ -102,31 +138,14 @@ alias agr='sudo apt-get uninstall'
 alias agp='sudo apt-get purge'
 alias aga='sudo apt-get autoremove'
 alias ctl='sudo service '
-alias altnet='~/.config/zsh/scripts/alternetwork.sh'
-alias checkports='~/.config/zsh/scripts/checkports.sh'
-if (( $+commands[fasd] )); then
-  # fuzzy completion with 'z' when called without args
-  unalias z 2>/dev/null
-  function z {
-    [ $# -gt 0 ] && _z "$*" && return
-    cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
-  }
-fi
-
-# ls tings
-if [ -x "$(command -v colorls)" ]; then
-    alias ls='colorls'
-elif [ -x "$(command -v lsd)" ]; then
-    alias ls='lsd'
-else
-    alias ls='ls -GpF'
-fi
+alias altnet='sudo ~/.config/zsh/scripts/alternetwork.sh'
+alias checkports='sudo ~/.config/zsh/scripts/checkports.sh'
 
 # sudoify commands
-alias netdiscover='netdiscover'
-alias apachectl='apachectl'
-alias apt='apt'
-alias snap='snap'
+alias netdiscover='sudo netdiscover'
+alias apachectl='sudo apachectl'
+alias apt='sudo apt'
+alias snap='sudo snap'
 
 # make gpg work
 # https://unix.stackexchange.com/questions/257061/
@@ -145,8 +164,27 @@ function zman {
   PAGER="less -g -I -s '+/^       "$1"'" man zshall;
 }
 
+
 # Create a reminder with human-readable durations, e.g. 15m, 1h, 40s, etc
 function r {
   local time=$1; shift
   sched "$time" "notify-send --urgency=critical 'Reminder' '$@'; ding";
 }; compdef r=sched
+
+alias lg='ltk_lg'
+alias pg='ltk_pg'
+alias nsg='ltk_netsg'
+alias tczero='truncate -s 0'
+alias mailtcz='truncate -s 0 /var/mail/${USER}'
+alias showSystemVersion='ltk_system_version'
+alias tf='ltk_tail'
+alias killByPort='ltk_kill_by_port'
+alias showPath='echo $PATH'
+alias deleteAllSpace="sed -i '/^\s*$/d'"
+
+# Proxy
+alias setHttpV2rayProxy='ltk_http_v2ray_proxy'
+alias unsetHttpProxy='ltk_unset_http_proxy'
+
+# Mac
+alias macAppInstallSourceAll='ltk_macos_enable_all_installation_sources'
