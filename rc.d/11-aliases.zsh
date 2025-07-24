@@ -1,6 +1,8 @@
 #!/bin/zsh
 
-alias ls='lsd'
+if command -v lsd >/dev/null 2>&1; then
+  alias ls='lsd'
+fi
 alias sourcezsh='source ~/.zshrc'
 alias pkm='$ZSH_CONFIG/scripts/pkm.sh'
 alias fullclock='tty-clock -csSb -C3'
@@ -155,21 +157,6 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 autoload -U zmv
-
-function take {
-  mkdir "$1" && cd "$1";
-}; compdef take=mkdir
-
-function zman {
-  PAGER="less -g -I -s '+/^       "$1"'" man zshall;
-}
-
-
-# Create a reminder with human-readable durations, e.g. 15m, 1h, 40s, etc
-function r {
-  local time=$1; shift
-  sched "$time" "notify-send --urgency=critical 'Reminder' '$@'; ding";
-}; compdef r=sched
 
 alias lg='ltk_lg'
 alias pg='ltk_pg'
