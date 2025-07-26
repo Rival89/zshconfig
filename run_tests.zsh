@@ -1,7 +1,4 @@
 #!/usr/bin/env zsh
 
-# Source the zshrc file
-source /home/rival/.zshrc
-
-# Run the tests
-ztr_run_tests tests/test_example.zsh
+# Run the test suite using the bundled configuration
+zsh tests/test_example.zsh
