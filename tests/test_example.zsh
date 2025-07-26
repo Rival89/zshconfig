@@ -1,22 +1,18 @@
 #!/usr/bin/env zsh
 
-# Load zinit
-source "/home/rival/.local/share/zinit/zinit.git/zinit.zsh"
-
-# Load the zsh-test-runner framework
-zinit ice as"program"
-zinit light "molovo/zsh-test-runner"
-
 # Load the function to be tested
-source "$(dirname "$0")/../functions/misc/admin.zsh"
+source "$(dirname "$0")/../functions/dirsearch"
 
-# Test case 1: Check if the admin function runs without errors
-test_admin_function_runs_without_errors() {
-    # Run the admin function and capture the output
-    output=$(admin)
-    # Assert that the output is not empty
-    assert_not_empty "$output"
+fail() {
+  echo "Test failed: $1" >&2
+  exit 1
 }
 
-# Run the tests
-ztr_run_tests
+run_test() {
+  "$@" > /dev/null || fail "$1 failed"
+}
+
+# Run the dirsearch function with a pattern
+run_test dirsearch zsh
+
+echo "All tests passed."

@@ -8,7 +8,7 @@ This is my personal Zsh configuration. It's designed to be fast, functional, and
 *   **Theme**: Uses the [Starship](https://starship.rs/) theme for a modern and informative prompt.
 *   **Fuzzy Search**: Integrates [fzf](https://github.com/junegunn/fzf) for fuzzy searching through files, directories, and command history.
 *   **Scripts**: Includes a collection of useful scripts for various tasks.
-*   **Testing**: Uses the [zsh-test-runner](https://github.com/molovo/zsh-test-runner) framework for testing.
+*   **Testing**: Includes a small shell-based test script.
 
 ## Installation
 
@@ -42,5 +42,5 @@ This is my personal Zsh configuration. It's designed to be fast, functional, and
 To run the tests, execute the following command:
 
 ```bash
-zsh tests/test_example.zsh
+./run_tests.zsh
 ```
