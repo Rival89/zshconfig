@@ -14,7 +14,6 @@ zinit light "zsh-users/zsh-completions"
 zinit light "zsh-users/zsh-history-substring-search"
 zinit light "zoxide/zoxide"
 zinit light "marlonrichert/zsh-autocomplete"
-zinit light "marlonrichert/zsh-edit"
 zinit light "marlonrichert/zsh-hist"
 zinit light "marlonrichert/zcolors"
 zinit light "romkatv/zsh-defer"
@@ -30,9 +29,12 @@ zinit light "molovo/revolver"
 zinit light "lukechilds/zsh-better-npm-completion"
 zinit light "darvid/zsh-poetry"
 zinit light "hlissner/zsh-autopair"
-zinit light "z-shell/zsh-lsd"
-zinit light "MichaelAquilina/zsh-autoswitch-virtualenv"
-
+if command -v lsd >/dev/null 2>&1; then
+  zinit light "z-shell/zsh-lsd"
+fi
+if command -v python >/dev/null 2>&1; then
+  zinit light "MichaelAquilina/zsh-autoswitch-virtualenv"
+fi
 # oh-my-zsh
 zinit snippet OMZL::completion.zsh
 zinit snippet OMZP::colorize/colorize.plugin.zsh

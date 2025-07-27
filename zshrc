@@ -30,7 +30,7 @@ if [[ -d "$functionsd" ]] {
     autoload -U $functionsd/*(:t)
 }
 
-for func in $^fpath/*(N-.x:t); autoload -Uz $func
+#for func in $^fpath/*(N-.x:t); autoload -Uz $func
 
 # Show time/memory for commands running longer than this number of seconds:
 REPORTTIME=5
