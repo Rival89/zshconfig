@@ -42,9 +42,8 @@ zinit snippet OMZP::gh/gh.plugin.zsh
 zinit snippet OMZP::pipenv/pipenv.plugin.zsh
 zinit snippet OMZP::git-extras/git-extras.plugin.zsh
 zinit snippet OMZP::gnu-utils/gnu-utils.plugin.zsh
-if command -v notify-send >/dev/null 2>&1; then
-  zinit snippet OMZP::bgnotify/bgnotify.plugin.zsh
-fi
+zinit snippet OMZP::zsh-256color/zsh-256color.plugin.zsh
+zinit snippet OMZP::bgnotify/bgnotify.plugin.zsh
 zinit snippet OMZP::debian/debian.plugin.zsh
 zinit snippet OMZP::fasd/fasd.plugin.zsh
 zinit snippet OMZP::magic-enter/magic-enter.plugin.zsh
@@ -56,9 +55,7 @@ zinit snippet OMZP::systemd/systemd.plugin.zsh
 zinit snippet OMZP::web-search/web-search.plugin.zsh
 zinit snippet OMZP::pip/pip.plugin.zsh
 zinit snippet OMZP::virtualenv/virtualenv.plugin.zsh
-if command -v virtualenvwrapper.sh >/dev/null 2>&1; then
-  zinit snippet OMZP::virtualenvwrapper/virtualenvwrapper.plugin.zsh
-fi
+zinit snippet OMZP::virtualenvwrapper/virtualenvwrapper.plugin.zsh
 zinit snippet OMZP::command-not-found/command-not-found.plugin.zsh
 
 # rupa/z
