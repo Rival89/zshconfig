@@ -40,7 +40,9 @@ setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history
 setopt HIST_REDUCE_BLANKS        # Minimize unnecessary whitespace
 setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing non-existent history.
-setopt ZLE
+if [[ -o INTERACTIVE ]]; then
+  setopt ZLE
+fi
 ## Directories
 DIRSTACKSIZE=15
 unsetopt AUTO_CD            # Implicit CD slows down plugins

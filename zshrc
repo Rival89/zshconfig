@@ -14,19 +14,8 @@
 bootTimeStart=$(gdate +%s%N 2>/dev/null || date +%s%N)
 
 
-# Compile multiple zsh script files to .zwc files.
-function zcompile-many() {
-  local f
-  for f; do zcompile -R -- "$f".zwc "$f"; done
-}
-
-# Users to ignore for `watch` command.
-watch=(notme root)
-
-
 ## Introduce environment & prompt files
 () {
-  local gitdir=~/.config/zsh/plugins  # Where to keep repos and plugins
   local file=
   for file in $ZDOTDIR/rc.d/<->-*.zsh(n); do
     . $file
@@ -41,7 +30,7 @@ if [[ -d "$functionsd" ]] {
     autoload -U $functionsd/*(:t)
 }
 
-for func in $^fpath/*(N-.x:t); autoload -Uz $func
+#for func in $^fpath/*(N-.x:t); autoload -Uz $func
 
 # Show time/memory for commands running longer than this number of seconds:
 REPORTTIME=5
@@ -56,16 +45,10 @@ autoload -Uz colors zargs zcalc zed zmv
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     export LS_COLORS="$LS_COLORS:ow=30;44:" # fix ls color for folders with 777 permissions
-
-    # enable command-not-found if installed
-if [ -f /etc/zsh_command_not_found ]; then
-    . /etc/zsh_command_not_found
-fi
 fi
 
 
 export EDITOR="nano"
-export LS_COLORS="$(vivid generate dracula)"
 
 # Auto-quote URLs pasted into the command line.
 autoload -U url-quote-magic
@@ -76,34 +59,37 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey "\ee" edit-command-line  # <Esc-e>
 
- # Do not add a newline before the prompt.
+# Do not add a newline before the prompt.
 unsetopt PROMPT_SP
 
-export LD_PRELOAD="/home/rival/Git/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
-
-# Print stderr with red. For more see
-# https://github.com/sickill/stderred
-STDERRED_PATH="$HOME/Git/stderred/build/libstderred.so"
-if [ -f $STDERRED_PATH ]; then
-    export LD_PRELOAD="${STDERRED_PATH}${LD_PRELOAD:+:$LD_PRELOAD}"
-    red_colored_text=$(tput setaf 9)
-    export STDERRED_ESC_CODE=`echo -e "$red_colored_text"`
-else
-    echo "stderred was not found. Please install it or remove it from .zshrc."
+# Guard against missing commands
+if command -v vivid >/dev/null 2>&1; then
+  export LS_COLORS="$(vivid generate dracula)"
 fi
-unset STDERRED_PATH
 
-PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - )"
+case "$OSTYPE" in
+  darwin*)
+    # macOS specific commands
+    ;;
+  linux*)
+    if [[ -r "$HOME/Git/stderred/build/libstderred.so" ]]; then
+      export LD_PRELOAD="$HOME/Git/stderred/build/libstderred.so:${LD_PRELOAD:-}"
+    fi
+    ;;
+esac
 
-#bindkey -r "^I"
-#bindkey "^I" expand-or-complete
-#bindkey "^ " fzf-completion
+if command -v pyenv >/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+if command -v basher >/dev/null 2>&1; then
+  eval "$(basher init - zsh)"
+fi
+
+if command -v thefuck >/dev/null 2>&1; then
+  eval "$(thefuck --alias)"
+fi
 
 bootTimeEnd=$(gdate +%s%N 2>/dev/null || date +%s%N)
 bootTimeDuration=$((($bootTimeEnd - $bootTimeStart)/1000000))
 echo $bootTimeDuration ms overall boot duration
-
-export PATH="$HOME/.basher/bin:$PATH"   ##basher5ea843
-eval "$(basher init - zsh)"             ##basher5ea843
