@@ -17,8 +17,9 @@ fi
 # Function to setup ChatGPT
 function chatgpt-setup() {
     echo "Setting up ChatGPT..."
-    read -p "Enter your OpenAI API key: " key
-    export OPENAI_API_KEY="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"
+    read -s -p "Enter your OpenAI API key: " key
+    echo
+    export OPENAI_API_KEY="$key"
     echo "ChatGPT is ready to use. Start a new conversation with 'chatgpt-start', continue the conversation with 'chatgpt-continue <message>', and end the conversation with 'chatgpt-end'."
 }
 
