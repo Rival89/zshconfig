@@ -69,14 +69,28 @@ fi
 
 case "$OSTYPE" in
   darwin*)
-    # macOS specific commands
+    PLATFORM="macos"
+    # Use GNU coreutils if available
+    command -v gdate >/dev/null 2>&1 && alias date="gdate"
     ;;
   linux*)
+    if grep -qi microsoft /proc/version 2>/dev/null || [[ -n "$WSL_DISTRO_NAME" ]]; then
+      PLATFORM="wsl"
+    else
+      PLATFORM="linux"
+    fi
     if [[ -r "$HOME/Git/stderred/build/libstderred.so" ]]; then
       export LD_PRELOAD="$HOME/Git/stderred/build/libstderred.so:${LD_PRELOAD:-}"
     fi
     ;;
+  cygwin*|msys*|win32*)
+    PLATFORM="windows"
+    ;;
+  *)
+    PLATFORM="unknown"
+    ;;
 esac
+export PLATFORM
 
 if command -v pyenv >/dev/null 2>&1; then
   eval "$(pyenv init -)"
