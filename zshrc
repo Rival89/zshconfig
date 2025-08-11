@@ -25,10 +25,10 @@ bootTimeStart=$(gdate +%s%N 2>/dev/null || date +%s%N)
 # add an autoload function path, if directory exists
 # http://www.zsh.org/mla/users/2002/msg00232.html
 functionsd="$ZSH_CONFIG/functions.d"
-if [[ -d "$functionsd" ]] {
-    fpath=( $functionsd $fpath )
-    autoload -U $functionsd/*(:t)
-}
+if [[ -d "$functionsd" ]]; then
+    fpath=( "$functionsd" $fpath )
+    autoload -U "$functionsd"/*(:t)
+fi
 
 #for func in $^fpath/*(N-.x:t); autoload -Uz $func
 
@@ -64,7 +64,13 @@ unsetopt PROMPT_SP
 
 # Guard against missing commands
 if command -v vivid >/dev/null 2>&1; then
-  export LS_COLORS="$(vivid generate dracula)"
+  cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}"
+  mkdir -p "$cache_dir"
+  ls_cache="$cache_dir/ls_colors"
+  if [[ ! -r "$ls_cache" ]]; then
+    vivid generate dracula >| "$ls_cache"
+  fi
+  export LS_COLORS="$(<"$ls_cache")"
 fi
 
 case "$OSTYPE" in

@@ -7,6 +7,7 @@ This is my personal Zsh configuration. It's designed to be fast, functional, and
 *   **Plugin Management**: Uses [zinit](https://github.com/zdharma-continuum/zinit) to manage plugins.
 *   **Theme**: Uses the [Starship](https://starship.rs/) theme for a modern and informative prompt.
 *   **Fuzzy Search**: Integrates [fzf](https://github.com/junegunn/fzf) for fuzzy searching through files, directories, and command history.
+*   **Command Correction**: Leverages [`thefuck`](https://github.com/nvbn/thefuck) when installed via Homebrew or APT.
 *   **Scripts**: Includes a collection of useful scripts for various tasks.
 *   **Ops Kit**: Provides red team automation helpers loaded via `rc.d/14-ops.zsh`.
 *   **Gum Integration**: Interactive menus use [gum](https://github.com/charmbracelet/gum); the launcher will install it if missing.
@@ -17,11 +18,12 @@ This is my personal Zsh configuration. It's designed to be fast, functional, and
 
 1.  Clone this repository to `~/.config/zsh`:
     ```bash
-    git clone https://github.com/your-username/your-repo.git ~/.config/zsh
+    git clone https://github.com/zshconfig/zshconfig.git ~/.config/zsh
     ```
-2.  Install the plugins:
+2.  Bootstrap dependencies and plugins using Make:
     ```bash
-    zsh -c "source ~/.config/zsh/rc.d/03-plugins.zsh"
+    cd ~/.config/zsh
+    make bootstrap
     ```
 3.  Restart your shell.
 
@@ -53,7 +55,7 @@ across different environments.
 To run the tests, execute the following command:
 
 ```bash
-./run_tests.zsh
+make test
 ```
 
 For detailed usage of the red team helpers see the manual page:
