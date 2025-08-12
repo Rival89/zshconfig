@@ -98,18 +98,6 @@ case "$OSTYPE" in
 esac
 export PLATFORM
 
-if command -v pyenv >/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-if command -v basher >/dev/null 2>&1; then
-  eval "$(basher init - zsh)"
-fi
-
-if command -v thefuck >/dev/null 2>&1; then
-  eval "$(thefuck --alias)"
-fi
-
 bootTimeEnd=$(gdate +%s%N 2>/dev/null || date +%s%N)
 bootTimeDuration=$((($bootTimeEnd - $bootTimeStart)/1000000))
 echo $bootTimeDuration ms overall boot duration

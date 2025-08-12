@@ -73,8 +73,10 @@ function run_nikto {
 
 # Main function
 function main {
-    local protocol_options=("http" "https")
-    local wordlist_dir="/home/rival/wordlists"
+    local protocol_options=("http" "https)
+    # The directory where your wordlists are stored.
+    # You can override this by setting the ZSH_WORDLIST_DIR environment variable.
+    local wordlist_dir="${ZSH_WORDLIST_DIR:-$HOME/wordlists}"
     local extension_options=("sql" "zip" "xml" "backup" "passwd" "conf" "log" "yaml" "txt" "php" "pdf" "js" "html" "json" "docx" "additional?")
     local tool_options=("feroxbuster" "nmap" "whois" "dnsenum" "theHarvester" "dirb" "nikto")
     

@@ -8,15 +8,17 @@ This is my personal Zsh configuration. It's designed to be fast, functional, and
 
 ## Features
 
-*   **Plugin Management**: Uses [zinit](https://github.com/zdharma-continuum/zinit) to manage plugins.
-*   **Theme**: Uses the [Starship](https://starship.rs/) theme for a modern and informative prompt.
-*   **Fuzzy Search**: Integrates [fzf](https://github.com/junegunn/fzf) for fuzzy searching through files, directories, and command history.
-*   **Command Correction**: Leverages [`thefuck`](https://github.com/nvbn/thefuck) when installed via Homebrew or APT.
-*   **Scripts**: Includes a collection of useful scripts for various tasks.
+*   **Fast and Modular**: The configuration is split into logical files and loads lazily for a fast startup time.
+*   **Powerful Prompt**: Uses a custom [Starship](https://starship.rs/) theme that is both beautiful and informative. **Note:** Requires a [Nerd Font](https://www.nerdfonts.com/) to be installed and enabled in your terminal.
+*   **Plugin Management**: Uses the fast and efficient [zinit](https://github.com/zdharma-continuum/zinit) to manage plugins.
+*   **Fuzzy Everything**: Integrates [fzf](https://github.com/junegunn/fzf) for fuzzy searching through files, directories, and command history.
+*   **Syntax Highlighting and Autosuggestions**: Leverages `zsh-syntax-highlighting` and `zsh-autosuggestions` for a better command-line experience.
+*   **Seamless Dependency Management**: A bootstrap script installs all necessary dependencies, including:
+    - `fzf`, `starship`, `thefuck`, `exa`, `bat`, `lsd`, `ripgrep`, `fd`, `gum`
+*   **Interactive Menus**: Uses [gum](https://github.com/charmbracelet/gum) to create beautiful and interactive menus for scripts.
 *   **Ops Kit**: Provides red team automation helpers loaded via `rc.d/14-ops.zsh`.
-*   **Gum Integration**: Interactive menus use [gum](https://github.com/charmbracelet/gum); the launcher will install it if missing.
 *   **Cross‑platform Support**: Detects Linux, macOS and WSL and only enables features when the required tools are present.
-*   **Testing**: Includes a small shell-based test script.
+*   **Tested**: Includes a shell-based test suite to ensure reliability.
 
 ## Installation
 
@@ -24,12 +26,14 @@ This is my personal Zsh configuration. It's designed to be fast, functional, and
     ```bash
     git clone https://github.com/zshconfig/zshconfig.git ~/.config/zsh
     ```
-2.  Bootstrap dependencies and plugins using Make:
+2.  Install the configuration:
     ```bash
     cd ~/.config/zsh
-    make bootstrap
+    make install
     ```
-3.  Restart your shell.
+    This will run the bootstrap script to install all dependencies, and then install the scripts and man pages to `/usr/local`.
+3.  **Set up a Nerd Font.** For the prompt to display correctly, you need to install a [Nerd Font](https://www.nerdfonts.com/font-downloads) and configure your terminal emulator to use it.
+4.  Restart your shell.
 
 The configuration detects Linux, macOS and WSL automatically. Features that rely on
 external tools are only enabled if those tools are available so the shell works
@@ -62,11 +66,9 @@ To run the tests, execute the following command:
 make test
 ```
 
-For detailed usage of the red team helpers see the manual page:
+For detailed usage of the red team helpers see the manual pages:
 
 ```bash
 man ops_kit
+man recon_wrapper
 ```
-
-Manual pages for `ops_kit` and `recon_wrapper` are provided in the `man/`
-directory and can be viewed with `man -l man/ops_kit.1`.
