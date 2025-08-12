@@ -9,7 +9,11 @@ movies() {
         return 1
     fi
 
-    local api_key="YOUR_API_KEY" # Replace with your own OMDb API key
+    local api_key="${OMDB_API_KEY:-}"
+    if [[ -z $api_key ]]; then
+        echo "OMDB_API_KEY environment variable is not set" >&2
+        return 1
+    fi
     local movie_title="$*"
     local url="http://www.omdbapi.com/?t=${movie_title// /+}&apikey=${api_key}"
     local response

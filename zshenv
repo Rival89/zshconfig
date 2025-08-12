@@ -136,4 +136,4 @@ if [ -d "$HOME/.cargo/bin" ] ; then
 fi
 
 
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
