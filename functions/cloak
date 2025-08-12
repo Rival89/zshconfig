@@ -1,15 +1,29 @@
 #!/bin/zsh
 
+# Interactively select a VPN configuration and connect using openvpn.
+# Looks for .ovpn files in the directory specified by the
+# ZSH_VPN_CONFIG_DIR environment variable, which defaults to
+# ~/.config/vpn.
 function cloak() {
+    local vpn_dir="${ZSH_VPN_CONFIG_DIR:-$HOME/.config/vpn}"
     local files f
-    files=(/home/rival/.config/vpn/CON/*)
+    files=("$vpn_dir"/*.ovpn)
+
+    if [[ ! -d "$vpn_dir" || ${#files[@]} -eq 0 ]]; then
+        echo "No VPN configuration files found in $vpn_dir"
+        return 1
+    fi
 
     # Set the PS3 prompt with color codes
     PS3=$'\e[1m\e[32mSelect a configuration file to start VPN connection:\e[0m '
 
     select f in ${files[@]}; do
         if [[ -n $f ]]; then
-            sudo openvpn "$f"
+            if [[ -n "$ZSH_TESTING" ]]; then
+                openvpn "$f"
+            else
+                sudo openvpn "$f"
+            fi
             break
         else
             echo "Invalid selection"
