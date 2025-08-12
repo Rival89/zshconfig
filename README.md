@@ -2,7 +2,7 @@
 
 This is my personal Zsh configuration. It's designed to be fast, functional, and beautiful.
 
-![Main Banner](ZSH_CONFIGbanner.png)
+![zsh-config banner](https://github.com/Rival89/zshconfig/blob/main/ZSH-CONFIGbanner.png)
 
 
 
