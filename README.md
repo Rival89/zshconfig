@@ -2,6 +2,10 @@
 
 This is my personal Zsh configuration. It's designed to be fast, functional, and beautiful.
 
+![Zsh Config Banner](./https://github.com/Rival89/zshconfig/blob/main/ZSH-CONFIGbanner.png)
+
+
+
 ## Features
 
 *   **Plugin Management**: Uses [zinit](https://github.com/zdharma-continuum/zinit) to manage plugins.
